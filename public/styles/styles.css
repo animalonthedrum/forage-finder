@@ -1,0 +1,53 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+.loginHeader {
+  font-size: 72px;
+  margin: 100px;
+  padding: 50px;
+  text-align: center;
+}
+
+.loginUser {
+  font-size: 20px;
+}
+
+.loginPass {
+  height: 25px;
+  font-size: 20px;
+}
+
+#loginPage {
+  text-align: center;
+  margin: 20px;
+}
+
+.btn {
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.logoutBtn {
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  margin-right: 200px;
+  float: right;
+}
+
+.topBtns {
+  text-align: center;
+}
+
+.mapFind {
+  text-align: center;
+}

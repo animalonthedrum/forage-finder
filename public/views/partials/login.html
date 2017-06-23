@@ -1,0 +1,17 @@
+<div class="appname">
+  <h1 class="loginHeader">forage-finder</h1>
+</div>
+<div id="loginPage">
+  <input class="loginUser" type="text" ng-model="fc.username" placeholder="username">
+</div>
+<div id="loginPage">
+  <input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
+</div>
+<div id="loginPage">
+  <button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
+  <button class="btn" ng-hide="fc.loginToggle" type="submit" name="button" ng-click="fc.register()">Register</button>
+</div>
+<div id="loginPage">
+  <a href="/#!" ng-show="fc.loginToggle" ng-click="fc.toggleLogin()">Register</a>
+  <a href="/#!" ng-hide="fc.loginToggle" ng-click="fc.toggleLogin()">Login</a>
+</div>
