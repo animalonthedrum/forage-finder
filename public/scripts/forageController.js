@@ -5,6 +5,10 @@ myApp.config(function($routeProvider) {
     templateUrl: 'views/partials/login.html'
   }).when('/home', {
     templateUrl: 'views/partials/home.html'
+  }).when('/mapIt', {
+    templateUrl: 'views/partials/mapIt.html'
+  }).when('/chat', {
+    templateUrl: 'views/partials/chat.html'
   });
 });
 
@@ -69,14 +73,23 @@ function forageController(forageService, $location) {
     $location.path('/');
   };
 
-  vm.addItem = function() {
-    var itemToSend = {
-      item: vm.item
-    };
-    forageService.addItem(itemToSend).then(function(res) {
-      console.log(res);
-    });
+  vm.returnHome = function() {
+    console.log('returning home');
+    $location.path('/home');
+    // forageService.returnHome(credentials).then(function(response) {
+    //   console.log(response);
+    //   vm.loggedInUser = response;
+    // });
   };
+
+  // vm.mapIt = function() {
+  //   var itemToSend = {
+  //     item: vm.item
+  //   };
+  //   forageService.mapIt(itemToSend).then(function(res) {
+  //     console.log(res);
+  //   });
+  // };
 
   // vm.getShelves = function() {
   // 	console.log('in controller, getShelvs');
