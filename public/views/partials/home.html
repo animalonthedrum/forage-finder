@@ -3,7 +3,7 @@
   <h1>{{fc.loggedInUser | uppercase}}'S PROFILE</h1>
 </div>
 <div class="topBtns">
-  <button type="button" class='findsbtn'>YOUR FINDS</button>
+  <a href='/#!/finds'><button ng-click='fc.finds()' type="button" class='findsbtn'>YOUR FINDS</button></a>
   <a href='/#!/chat'><button ng-click='fc.message()' type="button" class='chatbtn'>MESSAGE BOARD</button></a>
 </div>
 <div class="mapFind">

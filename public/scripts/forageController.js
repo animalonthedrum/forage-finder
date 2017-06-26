@@ -9,6 +9,8 @@ myApp.config(function($routeProvider) {
     templateUrl: 'views/partials/mapIt.html'
   }).when('/chat', {
     templateUrl: 'views/partials/chat.html'
+  }).when('/finds', {
+    templateUrl: 'views/partials/finds.html'
   });
 });
 
@@ -80,43 +82,66 @@ function forageController(forageService, $location) {
     //   console.log(response);
     //   vm.loggedInUser = response;
     // });
-  };
+  }; //end return home
 
-  // vm.mapIt = function() {
-  //   var itemToSend = {
-  //     item: vm.item
-  //   };
-  //   forageService.mapIt(itemToSend).then(function(res) {
-  //     console.log(res);
-  //   });
-  // };
+  vm.getLocation = function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }; //end getLocation
 
-  // vm.getShelves = function() {
-  // 	console.log('in controller, getShelvs');
-  // 	shelfService.retrieveMessages().then(function() {
-  // 		vm.shelfObject = shelfService.data;
-  // 		console.log('back in controller with:', vm.shelfObject);
-  // 	});
-  // }; //end
+  function showPosition(position) {
+    vm.lat = position.coords.latitude;
+    vm.lon = position.coords.longitude;
+    console.log('Lat:', vm.lat, 'lon:', vm.lon);
+    latlon = new google.maps.LatLng(vm.lat, vm.lon);
+    mapholder = document.getElementById('mapholder');
+    mapholder.style.height = '500px';
+    mapholder.style.width = '500px';
 
 
-  //
-  // 	if (vm.body == '') {
-  // 		alert('do NOT spam us with your empty messages!!!');
-  // 	} // end empty message
-  // 	else {
-  // 		// create object to send
-  // 		var newMessage = {
-  // 			name: vm.name,
-  // 			body: vm.body
-  // 		}; // end newMessage
-  // 		console.log('in controller sending:', newMessage);
-  // 		shelfService.newMessage(newMessage).then(function() {
-  // 			console.log('back in controller after post');
-  // 			vm.getMessages();
-  // 			vm.body = '';
-  // 		});
-  // 	} // end message exxists
-  // };
+    var myOptions = {
+      center: latlon,
+      zoom: 18,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      navigationControlOptions: {
+        style: google.maps.NavigationControlStyle.SMALL
+      }
+    }; //end myOptions
+
+    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+    var marker = new google.maps.Marker({
+      position: latlon,
+      map: map,
+      title: "You are here!"
+    }); //end marker
+  } //end showPosition
+
+  //make custom marer
+
+
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation.";
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable.";
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out.";
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred.";
+        break;
+    } //end switch
+  } //end showError
+
+
+
+
 
 } //end controller

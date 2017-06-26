@@ -3,3 +3,15 @@
   <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button>
 </div>
+
+<div ng-init="fc.getLocation()" id="mapholder">
+</div>
+
+<div class="mapInfo">
+  <select class="type" name="">
+  <option value="private">Private</option>
+<option value="public">Public</option>
+</select>
+  <input type="text" class='notes' placeholder="Notes">
+  <button type="button" class='add'>MAP IT</button>
+</div>
