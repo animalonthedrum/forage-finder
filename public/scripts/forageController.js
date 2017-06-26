@@ -140,6 +140,9 @@ function forageController(forageService, $location) {
     } //end switch
   } //end showError
 
+  vm.spinner = function() {
+    var wheel = true;
+  };
 
 
 
