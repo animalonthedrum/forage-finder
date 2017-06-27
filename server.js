@@ -4,12 +4,14 @@ var app = express();
 var index = require('./modules/routes/index');
 var register = require('./modules/routes/register');
 var login = require('./modules/routes/login');
+var map = require('./modules/routes/mapIt');
 
 // uses
 app.use(express.static('public'));
 app.use('/', index);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/mapIt', map);
 
 
 

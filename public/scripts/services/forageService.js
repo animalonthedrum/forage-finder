@@ -20,8 +20,14 @@ myApp.service('forageService', function($http, $location) {
         return response.data;
       }
     });
-  };
+  }; //end log in
 
+  sv.postMap = function(data) {
+    return $http.post('/mapIt', data).then(function(response) {
+      console.log('back from /mapIt:', response);
+      return response;
+    });
+  };
   // sv.returnHome = function(credentials) {
   //   return $http.post('/login', credentials).then(function(response) {
   //     console.log('back from login:', response);
@@ -49,4 +55,4 @@ myApp.service('forageService', function($http, $location) {
 
 
 
-});
+}); //end service

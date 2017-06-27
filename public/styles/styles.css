@@ -95,6 +95,8 @@
         left: 50%;
         margin-left: -250px;
         margin-top: 50px;
+        /*height: 500px;
+        width: 500px;*/
       }
 
       .add {
@@ -105,8 +107,7 @@
       }
 
       .notes {}
-
-      .spinner {
+      /*.spinner {
         height: 150px;
         width: 150px;
         position: absolute;
@@ -127,4 +128,28 @@
         to {
           transform: rotate(360deg);
         }
+      }*/
+
+      .spinner {
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        background-image: url('https://media.giphy.com/media/YPGwuiDVEQJfG/giphy.gif');
+        background-size: cover;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .title {
+        border: none;
+        font-size: 16px;
+        height: 25px;
+      }
+
+      .mushroom {
+        height: 8px;
+        width: 8px;
       }

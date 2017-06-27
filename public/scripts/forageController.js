@@ -20,6 +20,14 @@ function forageController(forageService, $location) {
   var vm = this;
   vm.loggedInUser;
   vm.loginToggle = true;
+  vm.spinnerToggle = false;
+  var latlon;
+  vm.loginName;
+
+  // //loading spinner
+  // vm.toggleSpinner = function() {
+  //   vm.spinnerToggle = !vm.spinnerToggle;
+  // }; //end toggleSpinner
 
   vm.toggleLogin = function() {
     vm.loginToggle = !vm.loginToggle;
@@ -42,6 +50,7 @@ function forageController(forageService, $location) {
           imageUrl: "https://vignette3.wikia.nocookie.net/hhwa/images/2/21/Forage.png/revision/latest?cb=20150324094419"
         });
         // clear out inputs
+        // vm.loginName = vm.username;
         vm.username = "";
         vm.password = "";
       });
@@ -61,7 +70,7 @@ function forageController(forageService, $location) {
       forageService.logIn(credentials).then(function(response) {
         console.log(response);
         vm.loggedInUser = response;
-
+        vm.loginName = vm.username;
         vm.username = "";
         vm.password = "";
 
@@ -86,16 +95,21 @@ function forageController(forageService, $location) {
 
   vm.getLocation = function() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition, showError);
+      vm.spinnerToggle = true;
+      console.log(vm.spinnerToggle);
+      navigator.geolocation.getCurrentPosition(vm.showPosition, showError);
     } else {
       x.innerHTML = "Geolocation is not supported by this browser.";
+
     }
   }; //end getLocation
 
-  function showPosition(position) {
+  vm.showPosition = function(position) {
     vm.lat = position.coords.latitude;
     vm.lon = position.coords.longitude;
-    console.log('Lat:', vm.lat, 'lon:', vm.lon);
+    vm.time = position.timestamp;
+    vm.date = new Date(vm.time).toLocaleString();
+    console.log('Lat:', vm.lat, 'lon:', vm.lon, 'time:', vm.time, 'date:', vm.date);
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
     mapholder = document.getElementById('mapholder');
     mapholder.style.height = '500px';
@@ -112,13 +126,30 @@ function forageController(forageService, $location) {
       }
     }; //end myOptions
 
+    var contentString = '<div id="content"><input ng-model ="fc.title" class="title"placeholder="Title"></div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    var image = 'images/mushroom.png';
+
     var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
     var marker = new google.maps.Marker({
+      animation: google.maps.Animation.DROP,
       position: latlon,
       map: map,
-      title: "You are here!"
+      icon: image,
+
+      // title: "You are here!"
     }); //end marker
-  } //end showPosition
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+    vm.spinnerToggle = false;
+    console.log(vm.spinnerToggle);
+  }; //end showPosition
 
   //make custom marer
 
@@ -138,11 +169,21 @@ function forageController(forageService, $location) {
         x.innerHTML = "An unknown error occurred.";
         break;
     } //end switch
-  } //end showError
 
-  vm.spinner = function() {
-    var wheel = true;
-  };
+  } //end showError
+  vm.postItem = function() {
+    var itemToSend = {
+      description: vm.info,
+      placer: vm.loginName,
+      lat: vm.lat,
+      lon: vm.lon,
+      title: vm.title,
+      timeStamp: vm.date
+    };
+    forageService.postMap(itemToSend).then(function(response) {
+      console.log(itemToSend);
+    });
+  }; //end postItem
 
 
 
