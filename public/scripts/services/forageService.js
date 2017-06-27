@@ -46,12 +46,12 @@ myApp.service('forageService', function($http, $location) {
   //   });
   // };
 
-  // sv.getItems = function() {
-  // 	return $http.get('/shelf').then(function(response) {
-  // 		console.log('get response:', response);
-  // 		return response;
-  // 	});
-  // };
+  sv.getItems = function() {
+    return $http.get('/finds').then(function(response) {
+      console.log('get response:', response);
+      return response;
+    });
+  };
 
 
 

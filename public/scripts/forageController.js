@@ -126,10 +126,10 @@ function forageController(forageService, $location) {
       }
     }; //end myOptions
 
-    var contentString = '<div id="content"><input ng-model ="fc.title" class="title"placeholder="Title"></div>';
+    vm.contentString = '<input id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title">';
 
     var infowindow = new google.maps.InfoWindow({
-      content: contentString
+      content: vm.contentString
     });
 
     var image = 'images/mushroom.png';
@@ -177,13 +177,18 @@ function forageController(forageService, $location) {
       placer: vm.loginName,
       lat: vm.lat,
       lon: vm.lon,
-      title: vm.title,
+      title: document.getElementById('markerTitle').value,
       timeStamp: vm.date
     };
+    console.log(itemToSend);
     forageService.postMap(itemToSend).then(function(response) {
       console.log(itemToSend);
     });
   }; //end postItem
+
+  vm.getItems = function() {
+
+  }
 
 
 
