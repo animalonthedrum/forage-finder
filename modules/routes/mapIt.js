@@ -18,7 +18,10 @@ var mapSchema = new mongoose.Schema({
   lat: Number,
   lon: Number,
   details: String,
-  title: String
+  title: String,
+  mode: Boolean,
+  timeStamp: Date
+
 });
 
 var maps = mongoose.model('maps', mapSchema);
@@ -31,11 +34,21 @@ router.post('/', function(req, res) {
     details: req.body.description,
     title: req.body.title,
     username: req.body.placer,
-    timeStamp: req.body.timeStamp
+    timeStamp: req.body.date,
+    mode: req.body.mode
 
   };
   maps(info).save();
   res.send(200);
 }); //end post
+
+router.get('/', function(req, res) {
+  console.log('get req:', req);
+  maps.find().then(function(response) {
+    res.send(response);
+  });
+});
+
+
 
 module.exports = router;

@@ -38,20 +38,15 @@ myApp.service('forageService', function($http, $location) {
   //   });
   // };
 
-  // sv.mapIt = function(item) {
-  //   console.log('item:', item);
-  //   return $http.post('/mapIt', item).then(function(response) {
-  //     console.log('back from add:', response);
-  //     return response;
-  //   });
-  // };
+
 
   sv.getItems = function() {
-    return $http.get('/finds').then(function(response) {
+    return $http.get('/mapIt').then(function(response) {
       console.log('get response:', response);
       return response;
     });
   };
+
 
 
 

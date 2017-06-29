@@ -3,3 +3,11 @@
   <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button>
 </div>
+
+<div class="yourMaps" ng-repeat='map in fc.maps'>
+  <div>
+    <!-- ng-show='fc.mode === public' -->
+    {{map}}
+
+  </div>
+</div>

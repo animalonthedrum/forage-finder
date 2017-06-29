@@ -1,113 +1,114 @@
-      body {
-        font-family: 'Lato', sans-serif;
-      }
+body {
+  font-family: 'Lato', sans-serif;
+}
 
-      h1 {
-        text-align: center;
-        margin: 50px;
-      }
+h1 {
+  text-align: center;
+  margin: 50px;
+}
 
-      .loginHeader {
-        font-size: 72px;
-        margin: 100px;
-        padding: 50px;
-        text-align: center;
-      }
+.loginHeader {
+  font-size: 72px;
+  margin: 100px;
+  padding: 50px;
+  text-align: center;
+}
 
-      .loginUser {
-        font-size: 20px;
-      }
+.loginUser {
+  font-size: 20px;
+}
 
-      .loginPass {
-        height: 25px;
-        font-size: 20px;
-      }
+.loginPass {
+  height: 25px;
+  font-size: 20px;
+}
 
-      #loginPage {
-        text-align: center;
-        margin: 20px;
-      }
+#loginPage {
+  text-align: center;
+  margin: 20px;
+}
 
-      .btn {
-        height: 25px;
-        width: 100px;
-        border-radius: 5px;
-        font-family: 'Lato', sans-serif;
-      }
+.btn {
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+}
 
-      .logoutBtn {
-        height: 25px;
-        width: 100px;
-        border-radius: 5px;
-        font-family: 'Lato', sans-serif;
-        margin-right: 200px;
-        float: right;
-      }
+.logoutBtn {
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  margin-right: 200px;
+  float: right;
+}
 
-      .topBtns {
-        text-align: center;
-      }
+.topBtns {
+  text-align: center;
+}
 
-      .mapFind {
-        text-align: center;
-      }
+.mapFind {
+  text-align: center;
+}
 
-      .footer {
-        margin: 100px;
-        text-align: center;
-      }
+.footer {
+  margin: 100px;
+  text-align: center;
+}
 
-      .messageInput {
-        height: 50px;
-        width: 920px;
-        font-size: 20px;
-        margin: 30px;
-        margin-left: 200px;
-      }
+.messageInput {
+  height: 50px;
+  width: 920px;
+  font-size: 20px;
+  margin: 30px;
+  margin-left: 200px;
+}
 
-      .returnBtn {
-        height: 25px;
-        width: 100px;
-        border-radius: 5px;
-        font-family: 'Lato', sans-serif;
-        margin-left: 100px;
-        float: left;
-      }
+.returnBtn {
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  margin-left: 100px;
+  float: left;
+}
 
-      .findbtn {
-        height: 80px;
-        width: 300px;
-        font-family: 'Lato', sans-serif;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 10px;
-        padding: 20px 20px;
-      }
+.findbtn {
+  height: 80px;
+  width: 300px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  padding: 20px 20px;
+}
 
-      .mapBtnImg {
-        float: left;
-        margin: 10px;
-        height: 40px;
-      }
+.mapBtnImg {
+  float: left;
+  margin: 10px;
+  height: 40px;
+}
 
-      #mapholder {
-        position: absolute;
-        left: 50%;
-        margin-left: -250px;
-        margin-top: 50px;
-        /*height: 500px;
-        width: 500px;*/
-      }
+#mapholder {
+  position: absolute;
+  left: 50%;
+  margin-left: -350px;
+  margin-top: 50px;
+}
 
-      .add {
-        height: 25px;
-        width: 100px;
-        border-radius: 5px;
-        font-family: 'Lato', sans-serif;
-      }
+.add {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  ;
+  font-family: 'Lato', sans-serif;
+}
 
-      .notes {}
-      /*.spinner {
+.notes {}
+
+
+/*.spinner {
         height: 150px;
         width: 150px;
         position: absolute;
@@ -130,26 +131,23 @@
         }
       }*/
 
-      .spinner {
-        height: 300px;
-        width: 300px;
-        position: absolute;
-        background-image: url('https://media.giphy.com/media/YPGwuiDVEQJfG/giphy.gif');
-        background-size: cover;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
+.spinner {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  background-image: url('https://media.giphy.com/media/YPGwuiDVEQJfG/giphy.gif');
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 
-      .title {
-        border: none;
-        font-size: 16px;
-        height: 25px;
-      }
-
-      .mushroom {
-        height: 8px;
-        width: 8px;
-      }
+.title {
+  border: none;
+  font-size: 16px;
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+}

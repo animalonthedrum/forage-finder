@@ -23,6 +23,11 @@ function forageController(forageService, $location) {
   vm.spinnerToggle = false;
   var latlon;
   vm.loginName;
+  vm.maps = [];
+  vm.mode = {
+    private: true,
+    public: false,
+  };
 
   // //loading spinner
   // vm.toggleSpinner = function() {
@@ -102,6 +107,7 @@ function forageController(forageService, $location) {
       x.innerHTML = "Geolocation is not supported by this browser.";
 
     }
+
   }; //end getLocation
 
   vm.showPosition = function(position) {
@@ -110,14 +116,19 @@ function forageController(forageService, $location) {
     vm.time = position.timestamp;
     vm.date = new Date(vm.time).toLocaleString();
     console.log('Lat:', vm.lat, 'lon:', vm.lon, 'time:', vm.time, 'date:', vm.date);
+    vm.spinnerToggle = false;
+    console.log(vm.spinnerToggle);
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
     mapholder = document.getElementById('mapholder');
+    // mapholder.style.height = '100vh';
+    // mapholder.style.width = '100vh';
     mapholder.style.height = '500px';
     mapholder.style.width = '500px';
 
 
     var myOptions = {
       center: latlon,
+      // zoom: 20,
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
@@ -126,7 +137,7 @@ function forageController(forageService, $location) {
       }
     }; //end myOptions
 
-    vm.contentString = '<input id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title">';
+    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
 
     var infowindow = new google.maps.InfoWindow({
       content: vm.contentString
@@ -178,19 +189,25 @@ function forageController(forageService, $location) {
       lat: vm.lat,
       lon: vm.lon,
       title: document.getElementById('markerTitle').value,
-      timeStamp: vm.date
+      date: vm.date,
+      mode: vm.mode
     };
-    console.log(itemToSend);
+    console.log(vm.mode);
+    // console.log(itemToSend);
     forageService.postMap(itemToSend).then(function(response) {
       console.log(itemToSend);
     });
   }; //end postItem
 
   vm.getItems = function() {
+    console.log('in controller, getItems');
+    forageService.getItems().then(function(res) {
+      console.log('in get:', res);
+      vm.maps = res.data;
 
-  }
-
-
+    });
+  };
+  vm.getItems();
 
 
 } //end controller
