@@ -16,7 +16,7 @@ myApp.service('forageService', function($http, $location) {
     return $http.post('/login', credentials).then(function(response) {
       console.log('back from login:', response);
       if (response.data) {
-        $location.path('/home');
+        $location.path('/mapIt');
         return response.data;
       }
     });

@@ -3,8 +3,8 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'views/partials/login.html'
-  }).when('/home', {
-    templateUrl: 'views/partials/home.html'
+    // }).when('/home', {
+    //   templateUrl: 'views/partials/home.html'
   }).when('/mapIt', {
     templateUrl: 'views/partials/mapIt.html'
   }).when('/chat', {
@@ -90,7 +90,7 @@ function forageController(forageService, $location) {
 
   vm.returnHome = function() {
     console.log('returning home');
-    $location.path('/home');
+    $location.path('/mapIt');
     // forageService.returnHome(credentials).then(function(response) {
     //   console.log(response);
     //   vm.loggedInUser = response;
@@ -118,6 +118,7 @@ function forageController(forageService, $location) {
     vm.spinnerToggle = false;
     console.log(vm.spinnerToggle);
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
+    console.log(latlon);
     mapholder = document.getElementById('mapholder');
     // mapholder.style.height = '100vh';
     // mapholder.style.width = '100vh';

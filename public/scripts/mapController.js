@@ -1,19 +1,24 @@
-myApp.controller = ('mapController', mapController);
+myApp.controller('mapController', mapController);
 
 function mapController(forageService) {
   var vm = this;
+  // vm.data = [];
+  //   vm.latLngObj = [];
+  //   vm.markerObjects = [];
+  //
+  //   for (var i = 0; i < response.data.length; i++) {
+  //     var obj = response.data[i];
+  //   }
 
 
-  vm.showPosition = function(position) {
-    vm.lat = position.coords.latitude;
-    vm.lon = position.coords.longitude;
-    vm.time = position.timestamp;
-    vm.date = new Date(vm.time).toLocaleString();
-    console.log('Lat:', vm.lat, 'lon:', vm.lon, 'time:', vm.time, 'date:', vm.date);
-    vm.spinnerToggle = false;
-    console.log(vm.spinnerToggle);
-    latlon = new google.maps.LatLng(vm.lat, vm.lon);
-    mapholder = document.getElementById('mapholder');
+
+
+
+  vm.showPosition = function() {
+    console.log('In show');
+    latlon = new google.maps.LatLng(44.9939454, -93.24013529999999);
+    console.log(latlon);
+    mapholder = document.getElementById('mapholder2');
     // mapholder.style.height = '100vh';
     // mapholder.style.width = '100vh';
     mapholder.style.height = '500px';
@@ -40,7 +45,7 @@ function mapController(forageService) {
 
     var image = 'images/mushroom.png';
 
-    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+    var map = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
     var marker = new google.maps.Marker({
       animation: google.maps.Animation.DROP,
       position: latlon,
@@ -55,11 +60,6 @@ function mapController(forageService) {
     });
 
   }; //end showPosition
-
-
-
-
-
 
 
 

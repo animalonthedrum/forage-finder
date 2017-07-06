@@ -1,23 +1,25 @@
-<div class="mapHeader">
+<div class="mapHeader" ng-init="mc.showPosition()">
   <h1> {{fc.loggedInUser | uppercase}}'S FINDS</h1>
   <!-- <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
-</div>
-<ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#!/home">Home</a></li>
-  <li role="presentation"><a href="#!/mapIt">Map</a></li>
-  <li role="presentation" class="dropdown"><a href="#!/finds">Profile</a></li>
-  <li role="presentation"><a href="#!/chat">Messages</a></li>
-  <li role="presentation"><a href="#">Log Out</a></li>
-</ul>
-<!-- <div ng-show='fc.private' ng-hide='fc.public'> -->
+  <!-- </div> -->
+  <ul class="nav nav-pills">
+    <!-- <li role="presentation" class="active"><a href="#!/home">Home</a></li> -->
+    <li role="presentation"><a href="#!/mapIt">Map</a></li>
+    <li role="presentation" class="active"><a href="#!/finds">Profile</a></li>
+    <li role="presentation"><a href="#!/chat">Messages</a></li>
+    <li role="presentation"><a href="#">Log Out</a></li>
+  </ul>
+  <!-- <div ng-show='fc.private' ng-hide='fc.public'> -->
 
-<div class="yourMaps" ng-repeat='map in fc.maps'>
+  <div id="mapholder2"></div>
 
-
-
-  {{map}}
+  <!-- <div class="yourMaps" ng-repeat='map in fc.maps'>
 
 
-</div>
-</div>
+
+    {{map.lat}} {{map.lon}}
+
+
+  </div> -->
+  <!-- </div> -->
