@@ -10,7 +10,7 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
-mongoose.connect('mongodb://heroku_4r3ww5t2:qntdijitkuavnb4m2i1bddquug@ds143342.mlab.com:43342/heroku_4r3ww5t2');
+mongoose.connect('localhost:27017/forageFinder');
 
 var mapSchema = new mongoose.Schema({
 
@@ -19,7 +19,8 @@ var mapSchema = new mongoose.Schema({
   lon: Number,
   details: String,
   title: String,
-  mode: Boolean,
+  public: Number,
+  private: Number,
   timeStamp: Date
 
 });
@@ -35,7 +36,8 @@ router.post('/', function(req, res) {
     title: req.body.title,
     username: req.body.placer,
     timeStamp: req.body.date,
-    mode: req.body.mode
+    private: req.body.private,
+    public: req.body.public,
 
   };
   maps(info).save();

@@ -11,15 +11,15 @@
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button>
 </div>
 
-<div id="mapholder">
-  <!-- ng-init="fc.getLocation()" -->
+<div id="mapholder" ng-init="fc.getLocation()">
+
 </div>
 
 
 <div class="mapInfo">
   <select ng-model='fc.mode' class="type" name="">
-  <option value="private">Private</option>
-<option value="public">Public</option>
+  <option ng-model='fc.private' value="private">Private</option>
+<option ng-model='fc.public' value="public">Public</option>
 </select>
   <input ng-model='fc.info' type="text" class='notes' placeholder="Notes">
   <button ng-click='fc.postItem()' type="button" class='add'>MAP IT</button>

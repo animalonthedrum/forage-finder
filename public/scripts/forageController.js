@@ -10,7 +10,8 @@ myApp.config(function($routeProvider) {
   }).when('/chat', {
     templateUrl: 'views/partials/chat.html'
   }).when('/finds', {
-    templateUrl: 'views/partials/finds.html'
+    templateUrl: 'views/partials/finds.html',
+    controller: 'mapController as mc'
   });
 });
 
@@ -24,10 +25,8 @@ function forageController(forageService, $location) {
   var latlon;
   vm.loginName;
   vm.maps = [];
-  vm.mode = {
-    private: true,
-    public: false,
-  };
+  vm.public = 1;
+  vm.private = 2;
 
   // //loading spinner
   // vm.toggleSpinner = function() {
@@ -126,6 +125,7 @@ function forageController(forageService, $location) {
     mapholder.style.width = '500px';
 
 
+
     var myOptions = {
       center: latlon,
       // zoom: 20,
@@ -190,7 +190,9 @@ function forageController(forageService, $location) {
       lon: vm.lon,
       title: document.getElementById('markerTitle').value,
       date: vm.date,
-      mode: vm.mode
+      public: vm.public,
+      private: vm.private
+
     };
     console.log(vm.mode);
     // console.log(itemToSend);
@@ -205,9 +207,45 @@ function forageController(forageService, $location) {
       console.log('in get:', res);
       vm.maps = res.data;
 
+
     });
   };
   vm.getItems();
+
+  //get messages
+  vm.getMessages = function() {
+    console.log('in controller, getMessages');
+    forageService.retrieveMessages().then(function() {
+      vm.messages = forageService.data;
+      console.log('back in controller with:', vm.messages);
+    });
+  }; //end getMessages
+
+  vm.sendMessage = function() {
+    // used to toggle name input
+    if (!vm.hasName) {
+      vm.hasName = true;
+    }
+
+    if (vm.body == '') {
+      alert('do NOT spam us with your empty messages!!!');
+    } // end empty message
+    else {
+      // create object to send
+      var newMessage = {
+        name: vm.name,
+        body: vm.body
+      }; // end newMessage
+      console.log('in controller sending:', newMessage);
+      forageService.newMessage(newMessage).then(function() {
+        console.log('back in controller after post');
+        vm.getMessages();
+        vm.body = '';
+      });
+    } // end message exists
+  };
+
+
 
 
 } //end controller

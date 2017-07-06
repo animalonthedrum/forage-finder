@@ -4,5 +4,18 @@
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button>
 </div>
 
-<input class="messageInput" type="text" ng-model="fc.message" placeholder="Enter Message">
-<button type='add' name="button">ADD COMMENT</button>
+
+<div class="messageBox">
+  <!-- <textarea type="text" name="" value="" ng-model="fc.body" placeholder="Enter Message"> -->
+  <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="fc.body" placeholder="Enter Message"></textarea>
+</div>
+<div class="addBtn">
+
+  <button ng-click='fc.sendMessage()' type="button" name="button">Add Comment</button>
+</div>
+<div ng-init='fc.getMessages()'>
+
+  <p ng-repeat='message in fc.messages'>
+    {{fc.loggedInUser | uppercase}} - {{ message.body }}
+  </p>
+</div>
