@@ -8,7 +8,8 @@ myApp.config(function($routeProvider) {
   }).when('/mapIt', {
     templateUrl: 'views/partials/mapIt.html'
   }).when('/chat', {
-    templateUrl: 'views/partials/chat.html'
+    templateUrl: 'views/partials/chat.html',
+    controller: 'chatController as cc'
   }).when('/finds', {
     templateUrl: 'views/partials/finds.html',
     controller: 'mapController as mc'
@@ -185,7 +186,7 @@ function forageController(forageService, $location) {
   } //end showError
   vm.postItem = function() {
     var itemToSend = {
-      description: vm.info,
+      // description: vm.info,
       placer: vm.loginName,
       lat: vm.lat,
       lon: vm.lon,
@@ -213,38 +214,6 @@ function forageController(forageService, $location) {
   };
   vm.getItems();
 
-  //get messages
-  vm.getMessages = function() {
-    console.log('in controller, getMessages');
-    forageService.retrieveMessages().then(function() {
-      vm.messages = forageService.data;
-      console.log('back in controller with:', vm.messages);
-    });
-  }; //end getMessages
-
-  vm.sendMessage = function() {
-    // used to toggle name input
-    if (!vm.hasName) {
-      vm.hasName = true;
-    }
-
-    if (vm.body == '') {
-      alert('do NOT spam us with your empty messages!!!');
-    } // end empty message
-    else {
-      // create object to send
-      var newMessage = {
-        name: vm.name,
-        body: vm.body
-      }; // end newMessage
-      console.log('in controller sending:', newMessage);
-      forageService.newMessage(newMessage).then(function() {
-        console.log('back in controller after post');
-        vm.getMessages();
-        vm.body = '';
-      });
-    } // end message exists
-  };
 
 
 

@@ -32,7 +32,7 @@ router.post('/', function(req, res) {
   var info = {
     lat: req.body.lat,
     lon: req.body.lon,
-    details: req.body.description,
+    // details: req.body.description,
     title: req.body.title,
     username: req.body.placer,
     timeStamp: req.body.date,

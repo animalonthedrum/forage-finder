@@ -40,7 +40,7 @@ router.post('/', function(req, res) {
             if (isMatch) {
               res.send(req.body.username);
             } else {
-              res.send('ah shoot');
+              res.send('no user');
             }
           }
         }); //end compare

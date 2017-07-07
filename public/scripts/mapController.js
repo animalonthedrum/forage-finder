@@ -2,33 +2,18 @@ myApp.controller('mapController', mapController);
 
 function mapController(forageService) {
   var vm = this;
-  // vm.data = [];
-  //   vm.latLngObj = [];
-  //   vm.markerObjects = [];
-  //
-  //   for (var i = 0; i < response.data.length; i++) {
-  //     var obj = response.data[i];
-  //   }
-
-
-
-
-
+  var image = 'images/mushroom.png';
+  var infowindow;
+  var map;
   vm.showPosition = function() {
     console.log('In show');
     latlon = new google.maps.LatLng(44.9939454, -93.24013529999999);
-    console.log(latlon);
     mapholder = document.getElementById('mapholder2');
-    // mapholder.style.height = '100vh';
-    // mapholder.style.width = '100vh';
-    mapholder.style.height = '500px';
-    mapholder.style.width = '500px';
-
-
+    mapholder2.style.height = '500px';
+    mapholder2.style.width = '500px';
 
     var myOptions = {
       center: latlon,
-      // zoom: 20,
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
@@ -36,31 +21,47 @@ function mapController(forageService) {
         style: google.maps.NavigationControlStyle.SMALL
       }
     }; //end myOptions
+    map = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
 
-    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
+    infowindow = new google.maps.InfoWindow({
 
-    var infowindow = new google.maps.InfoWindow({
-      content: vm.contentString
-    });
-
-    var image = 'images/mushroom.png';
-
-    var map = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
-    var marker = new google.maps.Marker({
-      animation: google.maps.Animation.DROP,
-      position: latlon,
-      map: map,
-      icon: image,
-
-      // title: "You are here!"
-    }); //end marker
-
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
     });
 
   }; //end showPosition
 
+
+  vm.getItems = function() {
+    console.log('in controller, getItems');
+    forageService.getItems().then(function(res) {
+      console.log('in get:', res);
+      vm.showPosition();
+      for (var i = 0; i < res.data.length; i++) {
+        createMarker(res.data[i]);
+      }
+      console.log(res.data);
+
+    }); //ends .then
+
+
+  }; //end getItems
+
+
+  function createMarker(place) {
+    var marker, i;
+
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(place.lat, place.lon),
+      icon: image,
+      title: place.title,
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', (function() {
+
+      infowindow.setContent('<h2>Description: ' + place.title + '</h2>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10));
+      infowindow.open(map, this);
+    }));
+  }
 
 
 

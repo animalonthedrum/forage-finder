@@ -1,9 +1,9 @@
-<div class="messageHeader">
+<!-- <div class="messageHeader">
   <h1>MESSAGE BOARD</h1>
-  <!-- <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
+  <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
-</div>
-<ul class="nav nav-pills">
+<!-- </div> -->
+<ul class="nav nav-tabs">
 
   <!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
   <li role="presentation"><a href="#!/mapIt">Map It</a></li>
@@ -15,15 +15,17 @@
 
 <div class="messageBox">
   <!-- <textarea type="text" name="" value="" ng-model="fc.body" placeholder="Enter Message"> -->
-  <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="fc.body" placeholder="Enter Message"></textarea>
+  <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="cc.body" placeholder="Enter Message"></textarea>
 </div>
 <div class="addBtn">
 
-  <button ng-click='fc.sendMessage()' type="button" name="button">Add Comment</button>
+  <button ng-click='cc.sendMessage()' type="button" name="button">Add Comment</button>
 </div>
-<div ng-init='fc.getMessages()'>
+<div ng-init='cc.getMessages()'>
 
-  <p ng-repeat='message in fc.messages'>
+  <h3 ng-repeat='message in cc.messages'>
     {{fc.loggedInUser | uppercase}} - {{ message.body }}
-  </p>
+    <button type="button" name="button">Delete</button>
+    <button type="button" name="button">Reply</button>
+  </h3>
 </div>

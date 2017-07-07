@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('localhost:27017/forageFinder');
 var messagesSchema = new mongoose.Schema({
-  name: String,
+
   body: String
 });
 var messagesModel = mongoose.model('messagesModel', messagesSchema);
@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   console.log('in messages post:', req.body);
   var messageToAdd = {
-    name: req.body.name,
+
     body: req.body.body
   };
   var newMessage = messagesModel(messageToAdd);
