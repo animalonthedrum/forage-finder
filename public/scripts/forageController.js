@@ -124,10 +124,10 @@ function forageController(forageService, $location) {
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
     console.log(latlon);
     mapholder = document.getElementById('mapholder');
-    // mapholder.style.height = '100vh';
-    // mapholder.style.width = '100vh';
-    mapholder.style.height = '500px';
-    mapholder.style.width = '500px';
+    mapholder.style.height = '100vh';
+    mapholder.style.width = '100vh';
+    // mapholder.style.height = '500px';
+    // mapholder.style.width = '500px';
 
 
 

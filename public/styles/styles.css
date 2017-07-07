@@ -19,7 +19,7 @@ h1 {
 }
 
 .loginPass {
-  height: 25px;
+  /*height: 25px;*/
   font-size: 20px;
 }
 
@@ -97,15 +97,38 @@ h1 {
   margin-top: 50px;
 }
 
-.add {
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  ;
-  font-family: 'Lato', sans-serif;
+#mapholder2 {
+  position: absolute;
+  left: 50%;
+  margin-left: -350px;
+  margin-top: 50px;
 }
 
-.notes {}
+.add {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  /*float: right;
+  margin-right: 100px;*/
+  font-family: 'Lato', sans-serif;
+  background-image: url('https://lh3.googleusercontent.com/UeIB6zS0pu3IBAcQZrPXPoQ-2zyT-YL6CnvEHqgix90goqPe74LbqYwrrvD2yJXTVw=w300');
+  background-size: cover;
+  border: none;
+}
+
+.add:hover {
+  opacity: 0.3;
+}
+
+.addMapBtn {
+  float: right;
+  margin-right: 80px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 100px;
+}
 
 
 /*.spinner {
@@ -160,4 +183,14 @@ li {
 .nav {
   float: right;
   color: gray;
+}
+
+.addComment {
+  float: right;
+  margin-right: 200px;
+}
+
+.mapInfo {
+  float: right;
+  margin-top: 40px;
 }

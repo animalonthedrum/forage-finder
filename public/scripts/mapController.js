@@ -11,8 +11,10 @@ function mapController(forageService) {
     console.log('In show');
     latlon = new google.maps.LatLng(44.9939454, -93.24013529999999);
     mapholder = document.getElementById('mapholder2');
-    mapholder2.style.height = '500px';
-    mapholder2.style.width = '500px';
+    // mapholder2.style.height = '500px';
+    // mapholder2.style.width = '500px';
+    mapholder2.style.height = '100vh';
+    mapholder2.style.width = '100vh';
 
     var myOptions = {
       center: latlon,
