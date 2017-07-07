@@ -73,4 +73,15 @@ myApp.service('forageService', function($http, $location) {
   }; // end newMessage
 
 
+  sv.deleteMessage = function(messageId) {
+    console.log('in deleteMessage, messageId is', messageId);
+    return $http({
+      method: 'DELETE',
+      url: '/chat/' + messageId
+    }).then(function(response) {
+      sv.deletedMessage = response;
+    });
+  };
+
+
 }); //end service

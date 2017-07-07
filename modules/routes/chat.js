@@ -32,4 +32,15 @@ router.post('/', function(req, res) {
   res.send('chat page');
 }); //end post
 
+
+router.delete('/:id', function(req, res) {
+  var id = req.params.id;
+  messagesModel.remove({
+    _id: id
+  }).then(function() {
+    res.send(200);
+  });
+
+}); //end router.delete
+
 module.exports = router;

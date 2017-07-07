@@ -36,6 +36,14 @@ function chatController(forageService) {
     } // end message exists
   };
 
+  vm.deleteMessage = function(index) {
+    console.log('message to delete:', index);
+    forageService.deleteMessage(index).then(function() {
+      console.log('back in controller', forageService.deletedMessage);
+      vm.delete = forageService.deletedMessage;
+      vm.getMessages();
+    });
+  };
 
 
 
