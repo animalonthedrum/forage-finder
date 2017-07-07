@@ -51,6 +51,15 @@ router.get('/', function(req, res) {
   });
 });
 
+router.delete('/:id', function(req, res) {
+  var id = req.params.id;
+  maps.remove({
+    _id: id
+  }).then(function() {
+    res.send(200);
+  });
+
+}); //end router.delete
 
 
 module.exports = router;

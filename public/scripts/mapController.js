@@ -1,7 +1,9 @@
 myApp.controller('mapController', mapController);
+var controllerHolder;
 
 function mapController(forageService) {
   var vm = this;
+  controllerHolder = this;
   var image = 'images/mushroom.png';
   var infowindow;
   var map;
@@ -57,12 +59,29 @@ function mapController(forageService) {
     });
 
     google.maps.event.addListener(marker, 'click', (function() {
-
-      infowindow.setContent('<h2>Description: ' + place.title + '</h2>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10));
+      console.log(place._id);
+      infowindow.setContent('<h2>Description: ' + place.title + '</h2>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
       infowindow.open(map, this);
     }));
   }
 
+  //delete Marker
+
+  vm.deleteMarker = function(index) {
+    console.log('message to delete:', index);
+    forageService.deleteMarker(index).then(function() {
+      console.log('back in controller', forageService.deletedMarker);
+      vm.deletePoint = forageService.deletedMessage;
+      vm.getItems();
+    });
+  };
+
 
 
 } //end controller
+
+function deletePlace(id) {
+  console.log('im out of the controller zikka zikka', id);
+  controllerHolder.deleteMarker(id);
+
+}

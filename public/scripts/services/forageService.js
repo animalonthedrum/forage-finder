@@ -72,7 +72,7 @@ myApp.service('forageService', function($http, $location) {
     }); // end http
   }; // end newMessage
 
-
+  //delete Message
   sv.deleteMessage = function(messageId) {
     console.log('in deleteMessage, messageId is', messageId);
     return $http({
@@ -81,7 +81,21 @@ myApp.service('forageService', function($http, $location) {
     }).then(function(response) {
       sv.deletedMessage = response;
     });
-  };
+  }; // end deleteMessage
+
+
+  //delete Marker
+  sv.deleteMarker = function(markerId) {
+    console.log('in deleteMessage, markerId is', markerId);
+    return $http({
+      method: 'DELETE',
+      url: '/mapIt/' + markerId
+    }).then(function(response) {
+      sv.deletedMarker = response;
+    });
+  }; // end deleteMarker
+
+
 
 
 }); //end service
