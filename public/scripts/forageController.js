@@ -16,6 +16,8 @@ myApp.config(function($routeProvider) {
   });
 });
 
+
+
 myApp.controller('forageController', forageController);
 
 function forageController(forageService, $location) {
@@ -28,6 +30,7 @@ function forageController(forageService, $location) {
   vm.maps = [];
   vm.public = 1;
   vm.private = 2;
+
 
   // //loading spinner
   // vm.toggleSpinner = function() {
@@ -102,7 +105,7 @@ function forageController(forageService, $location) {
     if (navigator.geolocation) {
       vm.spinnerToggle = true;
       console.log(vm.spinnerToggle);
-      navigator.geolocation.getCurrentPosition(vm.showPosition, showError);
+      navigator.geolocation.getCurrentPosition(vm.showPosition, vm.showError);
     } else {
       x.innerHTML = "Geolocation is not supported by this browser.";
 
@@ -162,12 +165,13 @@ function forageController(forageService, $location) {
     });
     vm.spinnerToggle = false;
     console.log(vm.spinnerToggle);
+
   }; //end showPosition
 
   //make custom marer
 
 
-  function showError(error) {
+  vm.showError = function(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED:
         x.innerHTML = "User denied the request for Geolocation.";
@@ -201,6 +205,7 @@ function forageController(forageService, $location) {
     forageService.postMap(itemToSend).then(function(response) {
       console.log(itemToSend);
     });
+
   }; //end postItem
 
   vm.getItems = function() {

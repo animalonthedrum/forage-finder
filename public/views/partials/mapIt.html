@@ -1,24 +1,36 @@
 <!-- loading spinner -->
-
 <div ng-if='fc.spinnerToggle' class="spinner"></div>
-
-
 <div class="mapHeader">
-
-
   <!-- <h1>foundFORAGE</h1> -->
-
-  <ul class="nav nav-tabs">
-
-    <!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
-    <li role="presentation" class="active"><a href="#!/mapIt">Map It</a></li>
+  <!-- <ul class="nav nav-tabs"> -->
+  <!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
+  <!-- <li role="presentation" class="active"><a href="#!/mapIt">Map It</a></li>
     <li role="presentation"><a href="#!/finds">Profile</a></li>
     <li role="presentation"><a href="#!/chat">Messages</a></li>
     <li role="presentation"><a href="#">Log Out</a></li>
-  </ul>
+  </ul> -->
   <!-- <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button> -->
   <!-- <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
 </div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li role="presentation" class="active"><a href="#!/mapIt">Map It</a></li>
+      <li role="presentation"><a href="#!/finds">Profile</a></li>
+      <li role="presentation"><a href="#!/chat">Messages</a></li>
+      </a>
+    </div>
+  </div>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Log Out</a></li>
+  </ul>
+</nav>
 
 <div id="mapholder" ng-init="fc.getLocation()">
 
@@ -27,6 +39,7 @@
 
 <div class="mapInfo">
   <select ng-model='fc.mode' class="type" placeholder='mode' name="">
+    <option value="" disabled selected>Share Options</option>
   <option selected ng-model='fc.private' value="private">Private</option>
 <option ng-model='fc.public' value="public">Public</option>
 </select>

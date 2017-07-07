@@ -3,15 +3,34 @@
   <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
 <!-- </div> -->
-<ul class="nav nav-tabs">
+<!-- <ul class="nav nav-tabs"> -->
 
-  <!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
-  <li role="presentation"><a href="#!/mapIt">Map It</a></li>
+<!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
+<!-- <li role="presentation"><a href="#!/mapIt">Map It</a></li>
   <li role="presentation"><a href="#!/finds">Profile</a></li>
   <li role="presentation" class="active"><a href="#!/chat">Messages</a></li>
   <li role="presentation"><a href="#">Log Out</a></li>
-</ul>
+</ul> -->
 
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li role="presentation"><a href="#!/mapIt">Map It</a></li>
+      <li role="presentation"><a href="#!/finds">Profile</a></li>
+      <li role="presentation" class="active"><a href="#!/chat">Messages</a></li>
+      </a>
+    </div>
+  </div>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Log Out</a></li>
+  </ul>
+</nav>
 
 <div class="messageBox">
   <!-- <textarea type="text" name="" value="" ng-model="fc.body" placeholder="Enter Message"> -->
@@ -26,6 +45,6 @@
   <h3 ng-repeat='message in cc.messages'>
     {{fc.loggedInUser | uppercase}} - {{ message.body }}
     <button ng-click='cc.deleteMessage(message._id)' type="button" name="button">Delete</button>
-    <button type="button" name="button">Reply</button>
+  <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button>
   </h3>
 </div>
