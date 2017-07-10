@@ -105,125 +105,125 @@ function forageController(forageService, $location) {
       vm.spinnerToggle = true;
       console.log(vm.spinnerToggle);
       navigator.geolocation.getCurrentPosition(vm.showPosition, vm.showError);
-      // } else {
-      //   x.innerHTML = "Geolocation is not supported by this browser.";
-      //
-      // }
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
 
-    }; //end getLocation
+    }
 
-    vm.showPosition = function(position) {
-      vm.lat = position.coords.latitude;
-      vm.lon = position.coords.longitude;
-      vm.time = position.timestamp;
-      vm.date = new Date(vm.time).toLocaleString();
-      console.log('Lat:', vm.lat, 'lon:', vm.lon, 'time:', vm.time, 'date:', vm.date);
-      vm.spinnerToggle = false;
-      console.log(vm.spinnerToggle);
-      latlon = new google.maps.LatLng(vm.lat, vm.lon);
-      console.log(latlon);
-      mapholder = document.getElementById('mapholder');
-      // mapholder.style.height = '100vh';
-      // mapholder.style.width = '100vh';
-      mapholder.style.height = '500px';
-      mapholder.style.width = '500px';
+  }; //end getLocation
 
-
-
-      var myOptions = {
-        center: latlon,
-        // zoom: 20,
-        zoom: 18,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControl: false,
-        scrollwheel: false,
-        navigationControlOptions: {
-          style: google.maps.NavigationControlStyle.SMALL
-        }
-      }; //end myOptions
-
-      vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
-
-      var infowindow = new google.maps.InfoWindow({
-        content: vm.contentString
-      });
-
-      var image = 'images/mushroom.png';
-
-      var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-      var marker = new google.maps.Marker({
-        animation: google.maps.Animation.DROP,
-        position: latlon,
-        map: map,
-        icon: image,
-
-        // title: "You are here!"
-      }); //end marker
-
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-      vm.spinnerToggle = false;
-      console.log(vm.spinnerToggle);
-
-    }; //end showPosition
-
-    //make custom marer
+  vm.showPosition = function(position) {
+    vm.lat = position.coords.latitude;
+    vm.lon = position.coords.longitude;
+    vm.time = position.timestamp;
+    vm.date = new Date(vm.time).toLocaleString();
+    console.log('Lat:', vm.lat, 'lon:', vm.lon, 'time:', vm.time, 'date:', vm.date);
+    vm.spinnerToggle = false;
+    console.log(vm.spinnerToggle);
+    latlon = new google.maps.LatLng(vm.lat, vm.lon);
+    console.log(latlon);
+    mapholder = document.getElementById('mapholder');
+    // mapholder.style.height = '100vh';
+    // mapholder.style.width = '100vh';
+    mapholder.style.height = '500px';
+    mapholder.style.width = '500px';
 
 
-    vm.showError = function(error) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          x.innerHTML = "User denied the request for Geolocation.";
-          break;
-        case error.POSITION_UNAVAILABLE:
-          x.innerHTML = "Location information is unavailable.";
-          break;
-        case error.TIMEOUT:
-          x.innerHTML = "The request to get user location timed out.";
-          break;
-        case error.UNKNOWN_ERROR:
-          x.innerHTML = "An unknown error occurred.";
-          break;
-      } //end switch
 
-    }; //end showError
-    vm.postItem = function() {
-      var itemToSend = {
-        // description: vm.info,
-        placer: vm.loginName,
-        lat: vm.lat,
-        lon: vm.lon,
-        title: document.getElementById('markerTitle').value,
-        date: vm.date,
-        // public: vm.public,
-        // private: vm.private
-        options: vm.mode
+    var myOptions = {
+      center: latlon,
+      // zoom: 20,
+      zoom: 18,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      scrollwheel: false,
+      navigationControlOptions: {
+        style: google.maps.NavigationControlStyle.SMALL
+      }
+    }; //end myOptions
 
-      };
+    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
 
+    var infowindow = new google.maps.InfoWindow({
+      content: vm.contentString
+    });
 
-      console.log(vm.mode);
-      // console.log(itemToSend);
-      forageService.postMap(itemToSend).then(function(response) {
-        console.log(itemToSend);
-      });
+    var image = 'images/mushroom.png';
 
-    }; //end postItem
+    var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+    var marker = new google.maps.Marker({
+      animation: google.maps.Animation.DROP,
+      position: latlon,
+      map: map,
+      icon: image,
 
-    vm.getItems = function() {
-      console.log('in controller, getItems');
-      forageService.getItems().then(function(res) {
-        console.log('in get:', res);
-        vm.maps = res.data;
+      // title: "You are here!"
+    }); //end marker
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+    vm.spinnerToggle = false;
+    console.log(vm.spinnerToggle);
+
+  }; //end showPosition
+
+  //make custom marer
 
 
-      });
+  vm.showError = function(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation.";
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable.";
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out.";
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred.";
+        break;
+    } //end switch
+
+  }; //end showError
+  vm.postItem = function() {
+    var itemToSend = {
+      // description: vm.info,
+      placer: vm.loginName,
+      lat: vm.lat,
+      lon: vm.lon,
+      title: document.getElementById('markerTitle').value,
+      date: vm.date,
+      // public: vm.public,
+      // private: vm.private
+      options: vm.mode
+
     };
-    vm.getItems();
+
+
+    console.log(vm.mode);
+    // console.log(itemToSend);
+    forageService.postMap(itemToSend).then(function(response) {
+      console.log(itemToSend);
+    });
+
+  }; //end postItem
+
+  vm.getItems = function() {
+    console.log('in controller, getItems');
+    forageService.getItems().then(function(res) {
+      console.log('in get:', res);
+      vm.maps = res.data;
+
+
+    });
+  };
+  vm.getItems();
 
 
 
 
 
-  } //end controller
+} //end controller
