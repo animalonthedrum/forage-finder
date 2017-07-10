@@ -194,3 +194,7 @@ li {
   float: right;
   margin-top: 40px;
 }
+
+.deleteMarkBtn {
+  float: right;
+}

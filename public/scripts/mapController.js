@@ -7,9 +7,11 @@ function mapController(forageService) {
   var image = 'images/mushroom.png';
   var infowindow;
   var map;
-  vm.showPosition = function() {
+
+
+  vm.showPosition = function(lat, lng) {
     console.log('In show');
-    latlon = new google.maps.LatLng(44.9939454, -93.24013529999999);
+    latlon = new google.maps.LatLng(lat, lng);
     mapholder = document.getElementById('mapholder2');
     // mapholder2.style.height = '500px';
     // mapholder2.style.width = '500px';
@@ -21,8 +23,10 @@ function mapController(forageService) {
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
+      scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.SMALL
+
       }
     }; //end myOptions
     map = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
@@ -30,7 +34,6 @@ function mapController(forageService) {
     infowindow = new google.maps.InfoWindow({
 
     });
-
   }; //end showPosition
 
 
@@ -38,12 +41,16 @@ function mapController(forageService) {
     console.log('in controller, getItems');
     forageService.getItems().then(function(res) {
       console.log('in get:', res);
-      vm.showPosition();
-      for (var i = 0; i < res.data.length; i++) {
-        createMarker(res.data[i]);
-      }
-      console.log(res.data);
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat1 = position.coords.latitude;
+        var lng1 = position.coords.longitude;
+        vm.showPosition(lat1, lng1);
+        for (var i = 0; i < res.data.length; i++) {
+          createMarker(res.data[i]);
+        }
+        console.log(res.data);
 
+      });
     }); //ends .then
 
 
@@ -62,7 +69,7 @@ function mapController(forageService) {
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
-      infowindow.setContent('<h2>Description: ' + place.title + '</h2>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
+      infowindow.setContent('<h3>Details: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + ' Share: ' + place.options + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
       infowindow.open(map, this);
     }));
   }

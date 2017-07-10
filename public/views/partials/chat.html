@@ -45,6 +45,6 @@
   <h3 ng-repeat='message in cc.messages'>
     {{fc.loggedInUser | uppercase}} - {{ message.body }}
     <button ng-click='cc.deleteMessage(message._id)' type="button" name="button">Delete</button>
-  <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button>
+  <!-- <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button> -->
   </h3>
 </div>
