@@ -1,7 +1,7 @@
 myApp.controller('mapController', mapController);
 var controllerHolder;
 
-function mapController(forageService) {
+function mapController(forageService, $filter) {
   var vm = this;
   controllerHolder = this;
   var image = 'images/mushroom.png';
@@ -12,11 +12,11 @@ function mapController(forageService) {
   vm.showPosition = function(lat, lng) {
     console.log('In show');
     latlon = new google.maps.LatLng(lat, lng);
-    mapholder = document.getElementById('mapholder2');
-    // mapholder2.style.height = '500px';
-    // mapholder2.style.width = '500px';
-    mapholder2.style.height = '100vh';
-    mapholder2.style.width = '100vh';
+    mapholder2 = document.getElementById('mapholder');
+    mapholder2.style.height = '500px';
+    mapholder2.style.width = '500px';
+    // mapholder.style.height = '100vh';
+    // mapholder.style.width = '100vw';
 
     var myOptions = {
       center: latlon,
@@ -29,7 +29,7 @@ function mapController(forageService) {
 
       }
     }; //end myOptions
-    map = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
+    map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
 
     infowindow = new google.maps.InfoWindow({
 
@@ -69,7 +69,8 @@ function mapController(forageService) {
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
-      infowindow.setContent('<h3>Details: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + ' Share: ' + place.options + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
+      infowindow.setContent('<h3>Details: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
+      // ' Share: ' + place.options +
       infowindow.open(map, this);
     }));
   }
@@ -84,7 +85,6 @@ function mapController(forageService) {
       vm.getItems();
     });
   };
-
 
 
 } //end controller

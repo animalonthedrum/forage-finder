@@ -13,6 +13,9 @@ myApp.config(function($routeProvider) {
   }).when('/finds', {
     templateUrl: 'views/partials/finds.html',
     controller: 'mapController as mc'
+  }).when('/list', {
+    templateUrl: 'views/partials/list.html',
+    controller: 'mapController as mc'
   });
 });
 
@@ -142,7 +145,7 @@ function forageController(forageService, $location) {
       }
     }; //end myOptions
 
-    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
+    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea><input type="button" value="Upload" onclick="showPicker()"></div>';
 
     var infowindow = new google.maps.InfoWindow({
       content: vm.contentString
@@ -207,6 +210,16 @@ function forageController(forageService, $location) {
     // console.log(itemToSend);
     forageService.postMap(itemToSend).then(function(response) {
       console.log(itemToSend);
+
+      // vm.searchFilter = function(itemToSend) {
+      //   if (itemToSend.title) {
+      //     var selected = $filter('filter')(vm.title, {
+      //       id: itemToSend.title
+      //     });
+      //     return selected.length ? selected[0].text : 'Not set';
+      //   }
+      // }; // end searchFilter
+      // vm.searchFilter(data);
     });
 
   }; //end postItem
@@ -227,3 +240,11 @@ function forageController(forageService, $location) {
 
 
 } //end controller
+
+var client = filestack.init('Ad5IIaaqyTY60IGIwPCg9z');
+
+function showPicker() {
+  client.pick({}).then(function(result) {
+    console.log(JSON.stringify(result.filesUploaded));
+  });
+}
