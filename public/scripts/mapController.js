@@ -3,6 +3,7 @@ var controllerHolder;
 
 function mapController(forageService, $filter) {
   var vm = this;
+  vm.spinnerToggle = false;
   controllerHolder = this;
   var image = 'images/mushroom.png';
   var infowindow;
@@ -11,16 +12,17 @@ function mapController(forageService, $filter) {
 
   vm.showPosition = function(lat, lng) {
     console.log('In show');
+
     latlon = new google.maps.LatLng(lat, lng);
-    mapholder2 = document.getElementById('mapholder');
-    mapholder2.style.height = '500px';
-    mapholder2.style.width = '500px';
-    // mapholder.style.height = '100vh';
-    // mapholder.style.width = '100vw';
+    mapholder = document.getElementById('mapholder');
+    // mapholder.style.height = '500px';
+    // mapholder.style.width = '500px';
+    mapholder.style.height = '100vh';
+    mapholder.style.width = '100vw';
 
     var myOptions = {
       center: latlon,
-      zoom: 18,
+      zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       scrollwheel: false,
@@ -39,8 +41,24 @@ function mapController(forageService, $filter) {
 
   vm.getItems = function() {
     console.log('in controller, getItems');
+
     forageService.getItems().then(function(res) {
       console.log('in get:', res);
+      // var cityName = [];
+      // for (var i = 0; i < res.data.length; i++) {
+      //   console.log(res.data[i].lat, res.data[i].lon);
+      //   var showCity = {
+      //     lat2: res.data[i].lat,
+      //     lon2: res.data[i].lon
+      //   };
+      //   cityName.push(showCity);
+      //
+      // } //end for loop
+      //
+      // forageService.getPlace(cityName, res).then(function(res) {
+      //   console.log('in get place', res.response);
+      //   console.log(res);
+
       navigator.geolocation.getCurrentPosition(function(position) {
         var lat1 = position.coords.latitude;
         var lng1 = position.coords.longitude;
@@ -48,14 +66,13 @@ function mapController(forageService, $filter) {
         for (var i = 0; i < res.data.length; i++) {
           createMarker(res.data[i]);
         }
-        console.log(res.data);
 
       });
+      // });
     }); //ends .then
 
 
   }; //end getItems
-
 
   function createMarker(place) {
     var marker, i;

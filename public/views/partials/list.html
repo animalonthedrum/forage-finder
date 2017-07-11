@@ -1,29 +1,43 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#!/mapIt">
+      <a class="navbar-brand" href="#">
         <img alt="Brand" src="">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li role="presentation"><a href="#!/mapIt">Map It</a></li>
-      <li role="presentation"><a href="#!/finds">Profile</a></li>
-      <li role="presentation"><a href="#!/chat">Messages</a></li>
-      <li role="presentation" class="active"><a href="#!/list">List</a></li>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search by keyword">
-        </div>
-        <button ng-click="fc.searchFilter(data)" type="submit" class="btn btn-default">Submit</button>
-      </form>
-      </a>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#!/mapIt" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#!/list">List</a>
+      <a href="#!/mapIt">Map It</a>
+      <a href="#!/finds">Profile</a>
+      <a href="#!/chat">Chat</a>
 
     </div>
+
+    <div id="main">
+
+      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    </a>
+  </div>
   </div>
   </ul>
+  <form class="navbar-form navbar-left">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search by keyword">
+    </div>
+    <button ng-click="fc.searchFilter(data)" type="submit" class="btn btn-default">Submit</button>
+  </form>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#">Log Out</a></li>
   </ul>
+  </div>
 </nav>
+
+
+
+
+
 
 
 
@@ -35,6 +49,7 @@
     <h4>Sharing: {{map.options}}</h4>
     <h4>Latitude: {{map.lat | number}}</h4>
     <h4>Longitude: {{map.lon | number}}</h4>
+    <h4>City: {{map.city}}</h4>
   </div>
   <!-- <input type="file" accept="image/*" capture="camera"> -->
 </div>

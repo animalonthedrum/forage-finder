@@ -19,18 +19,27 @@
       <a class="navbar-brand" href="#">
         <img alt="Brand" src="">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li role="presentation" class="active"><a href="#!/mapIt">Map It</a></li>
-      <li role="presentation"><a href="#!/finds">Profile</a></li>
-      <li role="presentation"><a href="#!/chat">Messages</a></li>
-      <li role="presentation"><a href="#!/list">List</a></li>
-      </a>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#!/mapIt" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#!/mapIt">Map It</a>
+      <a href="#!/finds">Profile</a>
+      <a href="#!/chat">Chat</a>
+      <a href="#!/list">List</a>
     </div>
+
+    <div id="main">
+
+      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    </a>
+  </div>
   </div>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#">Log Out</a></li>
   </ul>
+  </div>
 </nav>
 
 <div id="mapholder" ng-init="fc.getLocation()">
@@ -49,5 +58,7 @@
     <option selected value="1">Private</option>
   <option value="0">Public</option>
   </select>
+    <h4 class='instruction'>Click the marker to add notes</h4>
+    <h4>and add an image!</h4>
   </div>
 </div>

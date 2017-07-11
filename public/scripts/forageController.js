@@ -126,10 +126,10 @@ function forageController(forageService, $location) {
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
     console.log(latlon);
     mapholder = document.getElementById('mapholder');
-    // mapholder.style.height = '100vh';
-    // mapholder.style.width = '100vh';
-    mapholder.style.height = '500px';
-    mapholder.style.width = '500px';
+    mapholder.style.height = '100vh';
+    mapholder.style.width = '80vw';
+    // mapholder.style.height = '500px';
+    // mapholder.style.width = '500px';
 
 
 
@@ -192,36 +192,40 @@ function forageController(forageService, $location) {
 
   }; //end showError
   vm.postItem = function() {
-    var itemToSend = {
-      // description: vm.info,
-      placer: vm.loginName,
-      lat: vm.lat,
-      lon: vm.lon,
-      title: document.getElementById('markerTitle').value,
-      date: vm.date,
-      // public: vm.public,
-      // private: vm.private
-      options: vm.mode
+    forageService.getCity(vm.lat, vm.lon).then(function(response) {
 
-    };
+      console.log(response);
+
+      var itemToSend = {
+        // description: vm.info,
+        placer: vm.loginName,
+        lat: vm.lat,
+        lon: vm.lon,
+        title: document.getElementById('markerTitle').value,
+        date: vm.date,
+        // public: vm.public,
+        // private: vm.private
+        options: vm.mode,
+        city: response.data.results[0].address_components[3].long_name
+      };
 
 
-    console.log(vm.mode);
-    // console.log(itemToSend);
-    forageService.postMap(itemToSend).then(function(response) {
-      console.log(itemToSend);
+      console.log(vm.mode);
+      // console.log(itemToSend);
+      forageService.postMap(itemToSend).then(function(response) {
+        console.log(itemToSend);
 
-      // vm.searchFilter = function(itemToSend) {
-      //   if (itemToSend.title) {
-      //     var selected = $filter('filter')(vm.title, {
-      //       id: itemToSend.title
-      //     });
-      //     return selected.length ? selected[0].text : 'Not set';
-      //   }
-      // }; // end searchFilter
-      // vm.searchFilter(data);
-    });
-
+        // vm.searchFilter = function(itemToSend) {
+        //   if (itemToSend.title) {
+        //     var selected = $filter('filter')(vm.title, {
+        //       id: itemToSend.title
+        //     });
+        //     return selected.length ? selected[0].text : 'Not set';
+        //   }
+        // }; // end searchFilter
+        // vm.searchFilter(data);
+      });
+    }); //end getCity
   }; //end postItem
 
   vm.getItems = function() {
@@ -240,6 +244,13 @@ function forageController(forageService, $location) {
 
 
 } //end controller
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 
 var client = filestack.init('Ad5IIaaqyTY60IGIwPCg9z');
 

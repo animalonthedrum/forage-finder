@@ -13,7 +13,6 @@ function chatController(forageService) {
 
   vm.sendMessage = function() {
     // used to toggle name input
-    vm.body = '';
     if (!vm.hasName) {
       vm.hasName = true;
     }
@@ -53,6 +52,8 @@ function chatController(forageService) {
       vm.getMessages();
     });
   };
+
+
   // var messageLikes = function() {
   //   this.likes = 0;
   // };

@@ -1,18 +1,12 @@
-<div class="mapHeader" ng-init="mc.getItems()"></div>
+<div class="mapHeader" ng-init="mc.getItems()">
+</div>
+
 <!-- <h1> {{fc.loggedInUser | uppercase}}'S FINDS</h1> -->
 <!-- <h1>foundFORAGE</h1> -->
 <!-- <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
   <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
-<!-- </div> -->
-<!-- <ul class="nav nav-tabs"> -->
-<!-- <li role="presentation" class="active"><a href="#!/home">Home</a></li> -->
-<!-- <li role="presentation"><a href="#!/mapIt">Map It</a></li>
-  <li role="presentation" class="active"><a href="#!/finds">Profile</a></li>
-  <li role="presentation"><a href="#!/chat">Messages</a></li>
-  <li class='logOutNav' role="presentation"><a href="#">Log Out</a></li>
-</ul> -->
-<!-- <div ng-show='fc.private' ng-hide='fc.public'> -->
-<nav class="navbar navbar-default">
+
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#!/mapIt">
@@ -31,11 +25,40 @@
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#">Log Out</a></li>
   </ul>
+</nav> -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#!/mapIt" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#!/finds">Profile</a>
+      <a href="#!/mapIt">Map It</a>
+      <a href="#!/chat">Chat</a>
+      <a href="#!/list">List</a>
+    </div>
+
+    <div id="main">
+
+      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    </a>
+  </div>
+  </div>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Log Out</a></li>
+  </ul>
+  </div>
 </nav>
 
 
 
 <div id="mapholder"></div>
+
 
 <!-- <div class="yourMaps" ng-repeat='map in fc.maps'>
 

@@ -95,6 +95,27 @@ myApp.service('forageService', function($http, $location) {
     });
   }; // end deleteMarker
 
+  sv.getCity = function(lat, lon) {
+    return $http({
+      method: 'GET',
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key=AIzaSyAhz5owgKeTL_sj8oqFW0OESORQB22ygvE'
+    }).then(function(response) {
+      console.log(response);
+      return response;
+
+    });
+  };
+
+  // sv.getPlace = function(showCity) {
+  //   var lat = showCity.lat2;
+  //   var lon = showCity.lon2;
+  //   return $http({
+  //     method: 'GET',
+  //     url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&key=AIzaSyAhz5owgKeTL_sj8oqFW0OESORQB22ygvE'
+  //   }).then(function(response) {
+  //     return response;
+  //   });
+  // };
 
 
 

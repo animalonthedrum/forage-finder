@@ -5,32 +5,33 @@
 <!-- </div> -->
 <!-- <ul class="nav nav-tabs"> -->
 
-<!-- <li role="presentation"><a href="#!/mapIt">Map</a></li> -->
-<!-- <li role="presentation"><a href="#!/mapIt">Map It</a></li>
-  <li role="presentation"><a href="#!/finds">Profile</a></li>
-  <li role="presentation" class="active"><a href="#!/chat">Messages</a></li>
-  <li role="presentation"><a href="#">Log Out</a></li>
-</ul> -->
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#!/mapIt">
-        <img alt="Brand" src="">
+      <a class="navbar-brand" href="#">
+        <img alt="Logo" src="">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li role="presentation"><a href="#!/mapIt">Map It</a></li>
-      <li role="presentation"><a href="#!/finds">Profile</a></li>
-      <li role="presentation" class="active"><a href="#!/chat">Messages</a></li>
-      <li role="presentation"><a href="#!/list">List</a></li>
-      </a>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="#!/mapIt" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#!/chat">Chat</a>
+      <a href="#!/mapIt">Map It</a>
+      <a href="#!/finds">Profile</a>
+      <a href="#!/list">List</a>
     </div>
+
+    <div id="main">
+
+      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    </a>
+  </div>
   </div>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#">Log Out</a></li>
   </ul>
+  </div>
 </nav>
 
 <div class="messageBox">
@@ -45,8 +46,8 @@
     {{fc.loggedInUser | uppercase}} - {{ message.body }}
     <button ng-click='cc.deleteMessage(message._id)' class='deleteBtn' type="button" name="button">Delete</button>
   <!-- <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button> -->
-  <!-- <button class="likeButton" type="button" ng-click='cc.likeMessage($index)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
+  <!-- <button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
 </button>
-<p>{{messages.likes}} Likes</p> -->
+<p>{{mess.likes}} Likes</p> -->
   </h3>
 </div>

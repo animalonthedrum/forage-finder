@@ -20,7 +20,8 @@ var mapSchema = new mongoose.Schema({
   details: String,
   title: String,
   options: Number,
-  timeStamp: Date
+  timeStamp: Date,
+  city: String
 
 });
 
@@ -35,7 +36,8 @@ router.post('/', function(req, res) {
     title: req.body.title,
     username: req.body.placer,
     timeStamp: req.body.date,
-    options: req.body.options
+    options: req.body.options,
+    city: req.body.city
 
   };
   maps(info).save();
