@@ -10,7 +10,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #363234;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -252,7 +252,7 @@ li {
 .listItems {
   height: 275px;
   width: 275px;
-  background-color: #B1B592;
+  background-color: #A88151;
   text-align: center;
   margin: 10px;
   padding: 20px;
@@ -280,5 +280,5 @@ li {
 }
 
 .navbar {
-  background-color: #B1B592;
+  background-color: #757555;
 }
