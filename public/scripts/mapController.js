@@ -81,7 +81,7 @@ function mapController(forageService, $filter) {
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
-      infowindow.setContent('<h3>Details: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
+      infowindow.setContent('<h3>Notes: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
       // ' Share: ' + place.options +
       infowindow.open(map, this);
     }));
@@ -91,25 +91,26 @@ function mapController(forageService, $filter) {
 
   vm.deleteMarker = function(index) {
     console.log('message to delete:', index);
-    swal({
-      title: "Are you sure?",
-      text: "You will not be able to recover this imaginary file!",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Yes, delete it!",
-      closeOnConfirm: false,
-      html: false
-    }, function() {
-      swal("Deleted!",
-        "Your imaginary file has been deleted.",
-        "success");
-    });
+    // swal({
+    //   title: "Are you sure?",
+    //   text: "You will not be able to recover this imaginary file!",
+    //   type: "warning",
+    //   showCancelButton: true,
+    //   confirmButtonColor: "#DD6B55",
+    //   confirmButtonText: "Yes, delete it!",
+    //   closeOnConfirm: false,
+    //   html: false
+    // }, function() {
+    //   swal("Deleted!",
+    //     "Your imaginary file has been deleted.",
+    //     "success");
+    // });
     forageService.deleteMarker(index).then(function() {
       console.log('back in controller', forageService.deletedMarker);
       vm.deletePoint = forageService.deletedMessage;
-      vm.getItems();
+      // vm.getItems();
     });
+
   };
 
 

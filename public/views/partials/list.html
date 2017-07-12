@@ -32,5 +32,6 @@
   <p>Date: {{map.timeStamp | date}} </p>
   <p>Notes: {{map.title}} </p>
   <p>City: {{map.city}} </p>
+  <button ng-click='mc.deleteMarker(map._id); fc.getItems()' type="button" name="button">Delete</button>
 
 </div>
