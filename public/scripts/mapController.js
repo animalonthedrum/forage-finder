@@ -5,7 +5,7 @@ function mapController(forageService, $filter) {
   var vm = this;
   vm.spinnerToggle = false;
   controllerHolder = this;
-  var image = 'images/mushroom.png';
+  var image = 'images/mushroom2.png';
   var infowindow;
   var map;
 
@@ -17,19 +17,28 @@ function mapController(forageService, $filter) {
     mapholder = document.getElementById('mapholder');
     // mapholder.style.height = '500px';
     // mapholder.style.width = '500px';
-    mapholder.style.height = '100vh';
+    mapholder.style.height = '90vh';
     mapholder.style.width = '100vw';
 
     var myOptions = {
       center: latlon,
       zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: false,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        mapTypeIds: ['roadmap', 'terrain', 'hybrid']
+      },
       scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.SMALL
-
-      }
+      },
+      zoomControl: true,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_TOP
+      },
+      fullscreenControl: true,
+      streetViewControl: false
     }; //end myOptions
     map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
 
@@ -79,6 +88,7 @@ function mapController(forageService, $filter) {
 
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(place.lat, place.lon),
+      animation: google.maps.Animation.BOUNCE,
       icon: image,
       title: place.title,
       map: map

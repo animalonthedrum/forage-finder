@@ -1,38 +1,19 @@
-<!-- <div class="messageHeader">
-  <h1>MESSAGE BOARD</h1>
-  <button class="logoutBtn" ng-click='fc.logOut()'>Log Out</button>
-  <button class="returnBtn" ng-click='fc.returnHome()'>Home</button> -->
-<!-- </div> -->
-<!-- <ul class="nav nav-tabs"> -->
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Logo" src="">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-    <div id="mySidenav" class="sidenav">
-        <a href="#!/mapIt" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#!/chat">Chat</a>
-      <a href="#!/mapIt">Map It</a>
-      <a href="#!/finds">Profile</a>
-      <a href="#!/list">List</a>
-    </div>
-
-    <div id="main">
-
-      <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
-    </div>
-    </a>
+<div id="mySidenav" class="sidenav">
+  <a class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#!/mapIt">Map It</a>
+  <a href="#!/finds">Profile</a>
+  <a href="#!/chat"><u>Chat</u></a>
+  <a href="#!/list">List</a>
+  <div class='logOut'>
+    <a href="#">Log Out</a>
   </div>
-  </div>
-  </ul>
-  <ul class="nav navbar-nav navbar-right">
-    <li><a href="#">Log Out</a></li>
-  </ul>
-  </div>
-</nav>
+</div>
+
+<div id="main">
+
+  <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+</div>
+
 
 <div class="messageBox">
   <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="cc.body" placeholder="Enter Message"></textarea>

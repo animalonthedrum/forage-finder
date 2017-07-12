@@ -64,6 +64,7 @@ h1 {
   margin: 100px;
   padding: 50px;
   text-align: center;
+  color: #757555;
 }
 
 .loginUser {
@@ -78,31 +79,6 @@ h1 {
 #loginPage {
   text-align: center;
   margin: 20px;
-}
-
-
-/*.btn {
-  height: 25px;
-  width: 100px;
-  border-radius: 5px;
-  font-family: 'Lato', sans-serif;
-}*/
-
-.logoutBtn {
-  height: 25px;
-  width: 100px;
-  border-radius: 5px;
-  font-family: 'Lato', sans-serif;
-  margin-right: 200px;
-  float: right;
-}
-
-.topBtns {
-  text-align: center;
-}
-
-.mapFind {
-  text-align: center;
 }
 
 .footer {
@@ -145,17 +121,12 @@ h1 {
 
 #mapholder {
   position: absolute;
-  /*left: 50%;
-  margin-left: -350px;
-  margin-top: 50px;*/
 }
 
 .add {
   height: 100px;
   width: 100px;
   border-radius: 100px;
-  /*float: right;
-  margin-right: 100px;*/
   font-family: 'Lato', sans-serif;
   background-image: url('https://lh3.googleusercontent.com/UeIB6zS0pu3IBAcQZrPXPoQ-2zyT-YL6CnvEHqgix90goqPe74LbqYwrrvD2yJXTVw=w300');
   background-size: cover;
@@ -223,12 +194,11 @@ h1 {
 
 li {
   font-size: 22px;
-  color: #AB9D7B;
+  color: white;
 }
 
 .nav {
   float: right;
-  color: #AB9D7B;
 }
 
 .addComment {
@@ -243,6 +213,10 @@ li {
 .mapInfo {
   float: right;
   margin-top: 40px;
+}
+
+.type {
+  cursor: pointer;
 }
 
 .deleteMarkBtn {
@@ -268,17 +242,28 @@ li {
   opacity: 0.5;
 }
 
-
-/*.thumb {
-  height: 30px;
-  width: 30px;
-  padding: 3px;
-}*/
-
 .instruction {
   margin-top: 30px;
 }
 
-.navbar {
+#main {
   background-color: #757555;
+  color: #363234;
+  height: 80px;
+}
+
+.logOut {
+  margin-top: 400px;
+}
+
+.closebtn {
+  cursor: pointer;
+}
+
+a {
+  margin: 10px;
+}
+
+u {
+  color: #757555;
 }

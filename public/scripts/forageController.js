@@ -126,7 +126,7 @@ function forageController(forageService, $location) {
     latlon = new google.maps.LatLng(vm.lat, vm.lon);
     console.log(latlon);
     mapholder = document.getElementById('mapholder');
-    mapholder.style.height = '100vh';
+    mapholder.style.height = '90vh';
     mapholder.style.width = '80vw';
     // mapholder.style.height = '500px';
     // mapholder.style.width = '500px';
@@ -137,12 +137,22 @@ function forageController(forageService, $location) {
       center: latlon,
       // zoom: 20,
       zoom: 18,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: false,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        mapTypeIds: ['roadmap', 'terrain', 'hybrid']
+      },
       scrollwheel: false,
       navigationControlOptions: {
         style: google.maps.NavigationControlStyle.SMALL
-      }
+      },
+      zoomControl: true,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_TOP
+      },
+      fullscreenControl: true,
+      streetViewControl: false
     }; //end myOptions
 
     vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea><input type="button" value="Upload" onclick="showPicker()"></div>';
@@ -151,7 +161,7 @@ function forageController(forageService, $location) {
       content: vm.contentString
     });
 
-    var image = 'images/mushroom.png';
+    var image = 'images/mushroom2.png';
 
     var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
     var marker = new google.maps.Marker({
