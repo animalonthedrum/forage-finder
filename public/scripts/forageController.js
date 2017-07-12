@@ -155,8 +155,8 @@ function forageController(forageService, $location) {
       streetViewControl: false
     }; //end myOptions
 
-    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea><input type="button" value="Upload" onclick="showPicker()"></div>';
-
+    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
+    // <input type="button" value="Upload" onclick="showPicker()">
     var infowindow = new google.maps.InfoWindow({
       content: vm.contentString
     });
@@ -216,7 +216,8 @@ function forageController(forageService, $location) {
         // public: vm.public,
         // private: vm.private
         options: vm.mode,
-        city: response.data.results[0].address_components[3].long_name
+        city: response.data.results[0].address_components[3].long_name,
+        img: vm.img
       };
 
 
@@ -224,16 +225,6 @@ function forageController(forageService, $location) {
       // console.log(itemToSend);
       forageService.postMap(itemToSend).then(function(response) {
         console.log(itemToSend);
-
-        // vm.searchFilter = function(itemToSend) {
-        //   if (itemToSend.title) {
-        //     var selected = $filter('filter')(vm.title, {
-        //       id: itemToSend.title
-        //     });
-        //     return selected.length ? selected[0].text : 'Not set';
-        //   }
-        // }; // end searchFilter
-        // vm.searchFilter(data);
       });
     }); //end getCity
   }; //end postItem
@@ -243,6 +234,7 @@ function forageController(forageService, $location) {
     forageService.getItems().then(function(res) {
       console.log('in get:', res);
       vm.maps = res.data;
+      console.log(vm.maps);
 
 
     });
@@ -250,8 +242,20 @@ function forageController(forageService, $location) {
   vm.getItems();
 
 
-
-
+  // uploading an image to filestack
+  vm.uploadImg = filestack.init('Ad5IIaaqyTY60IGIwPCg9z');
+  vm.showPicker = function() {
+    vm.uploadImg.pick({}).then(function(response) {
+      // console.log(response);
+      console.log('upload this img', (response.filesUploaded[0].url));
+      vm.img = response.filesUploaded[0].url;
+      console.log('img:', vm.img);
+    }); //end uploadImg
+  }; // end showPicker
+  // vm.toggleDiv = function(index) {
+  //   console.log('toggle', index);
+  //   vm.maps[index].city = !vm.map[index].city;
+  // }; //end toggleDiv
 
 } //end controller
 function openNav() {
@@ -262,10 +266,10 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-var client = filestack.init('Ad5IIaaqyTY60IGIwPCg9z');
 
-function showPicker() {
-  client.pick({}).then(function(result) {
-    console.log(JSON.stringify(result.filesUploaded));
-  });
-}
+
+// var showPicker = function() {
+//   console.log('in showpicker out of controller');
+//   var wtf = angular.element(document.getElementById('#mapholder')).scope().get();
+//   console.log(wtf);
+// };

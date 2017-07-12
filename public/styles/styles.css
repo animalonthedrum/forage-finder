@@ -267,3 +267,11 @@ a {
 u {
   color: #757555;
 }
+
+.uploadImg {
+  height: 275px;
+  width: 275px;
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+}

@@ -11,19 +11,10 @@
 
 <div id="main">
 
-  <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
 </div>
 
-
-
-
-
-
-
-
-
-
-<div class="list">
+<!-- <div class="list">
   <div class="container">
     <div class="col-md-4 listItems" ng-repeat='map in fc.maps'>
       <h3>Date: {{map.timeStamp | date}}</h3>
@@ -31,7 +22,15 @@
       <h4>Sharing: {{map.options}}</h4>
       <h4>City: {{map.city}}</h4>
       <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+      <img ng-src="{{map.img}}" class='uploadImg'>
     </div>
-    <!-- <input type="file" accept="image/*" capture="camera"> -->
   </div>
+</div> -->
+<!-- class="col-md-4 listItems" -->
+<div class='col-md-4' ng-repeat='map in fc.maps'>
+  <img ng-src="{{map.img}}" class='uploadImg'>
+  <p>Date: {{map.timeStamp | date}} </p>
+  <p>Notes: {{map.title}} </p>
+  <p>City: {{map.city}} </p>
+
 </div>

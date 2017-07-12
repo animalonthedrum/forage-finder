@@ -3,7 +3,7 @@ var controllerHolder;
 
 function mapController(forageService, $filter) {
   var vm = this;
-  vm.spinnerToggle = false;
+  vm.spinnerToggle = true;
   controllerHolder = this;
   var image = 'images/mushroom2.png';
   var infowindow;
@@ -50,24 +50,8 @@ function mapController(forageService, $filter) {
 
   vm.getItems = function() {
     console.log('in controller, getItems');
-
     forageService.getItems().then(function(res) {
       console.log('in get:', res);
-      // var cityName = [];
-      // for (var i = 0; i < res.data.length; i++) {
-      //   console.log(res.data[i].lat, res.data[i].lon);
-      //   var showCity = {
-      //     lat2: res.data[i].lat,
-      //     lon2: res.data[i].lon
-      //   };
-      //   cityName.push(showCity);
-      //
-      // } //end for loop
-      //
-      // forageService.getPlace(cityName, res).then(function(res) {
-      //   console.log('in get place', res.response);
-      //   console.log(res);
-
       navigator.geolocation.getCurrentPosition(function(position) {
         var lat1 = position.coords.latitude;
         var lng1 = position.coords.longitude;
@@ -93,6 +77,7 @@ function mapController(forageService, $filter) {
       title: place.title,
       map: map
     });
+    marker.setAnimation(4);
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
@@ -106,6 +91,20 @@ function mapController(forageService, $filter) {
 
   vm.deleteMarker = function(index) {
     console.log('message to delete:', index);
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this imaginary file!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: false,
+      html: false
+    }, function() {
+      swal("Deleted!",
+        "Your imaginary file has been deleted.",
+        "success");
+    });
     forageService.deleteMarker(index).then(function() {
       console.log('back in controller', forageService.deletedMarker);
       vm.deletePoint = forageService.deletedMessage;

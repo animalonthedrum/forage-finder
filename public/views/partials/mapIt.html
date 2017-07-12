@@ -15,7 +15,7 @@
 
   <div id="main">
 
-    <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
   </div>
 
 
@@ -27,6 +27,7 @@
 
   <!-- <input ng-model='fc.info' type="text" class='notes' placeholder="Notes"> -->
   <div class="addMapBtn">
+    <h4 class='instruction'>Click the marker to add notes</h4>
     <button ng-click='fc.postItem()' type="button" class='add'></button>
     <p>MAP IT</p>
     <div class="mapInfo">
@@ -35,7 +36,7 @@
     <option selected value="1">Private</option>
   <option value="0">Public</option>
   </select>
-      <h4 class='instruction'>Click the marker to add notes</h4>
-      <h4>and add an image!</h4>
+      <button class="upload" ng-click="fc.showPicker()">Add Image</button>
+      <img ng-src="{{map.img}}" class='uploadImg'>
     </div>
   </div>
