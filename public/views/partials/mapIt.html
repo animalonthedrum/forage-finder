@@ -30,17 +30,21 @@
 
 
   <!-- <input ng-model='fc.info' type="text" class='notes' placeholder="Notes"> -->
-  <div class="addMapBtn">
-    <h4 class='instruction'>Click the marker to add notes</h4>
-    <button ng-click='fc.postItem()' type="button" class='add'></button>
-    <p>MAP IT</p>
-    <div class="mapInfo">
-      <select ng-model='fc.mode' class="type" placeholder='mode' name="">
+
+
+  <div class="rightSide">
+    <div class="addMapBtn">
+      <h4 class='instruction'>Click the marker to add notes</h4>
+      <button ng-click='fc.postItem()' type="button" class='add'></button>
+      <p>MAP IT</p>
+      <div class="mapInfo">
+        <select ng-model='fc.mode' class="type" placeholder='mode' name="">
       <option value="" disabled selected>Share Options</option>
     <option selected value="1">Private</option>
   <option value="0">Public</option>
   </select>
-      <button class="upload" ng-click="fc.showPicker()">Add Image</button>
-      <!-- <img ng-src="{{map.img}}" class='uploadImg'> -->
+        <button class="upload" ng-click="fc.showPicker()">Add Image</button>
+        <!-- <img ng-src="{{map.img}}" class='uploadImg'> -->
+      </div>
     </div>
   </div>

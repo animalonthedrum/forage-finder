@@ -31,12 +31,38 @@
   </div>
 </div> -->
 <!-- class="col-md-4 listItems" -->
-<div class='col-md-4' ng-repeat='map in fc.maps'>
+
+<!-- Before Carousel -->
+<!-- <div class='col-md-4' ng-repeat='map in fc.maps'>
   <img ng-src="{{map.img}}" class='uploadImg'>
-  <h3>Date: {{map.timeStamp | date}} </h3>
+  <h4>Date: {{map.timeStamp | date}} </h4>
   <h4>Notes: {{map.title}} </h4>
-  <h3>City: {{map.city}} </h3>
+  <h4>City: {{map.city}} </h4>
   <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
   <button ng-click='mc.deleteMarker(map._id); fc.getItems()' type="button" name="button">Delete</button>
+
+</div> -->
+
+
+
+
+
+<div style="height: 305px">
+
+  <div uib-carousel active="true" interval="3000" no-wrap="false">
+    <div uib-slide="" active="map.active" ng-repeat="map in fc.maps" index="$index">
+      <img ng-src="{{map.img}}" style="margin:auto; height:500px; width:500px;" />
+      <div class='info'>
+        <h4>Date: {{map.timeStamp | date}} </h4>
+        <h4>Notes: {{map.title}} </h4>
+        <h4>City: {{map.city}} </h4>
+        <h4>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h4>
+        <button ng-click='mc.deleteMarker(map._id); fc.getItems()' type="button" name="button">Delete</button>
+      </div>
+
+    </div>
+
+  </div>
+
 
 </div>

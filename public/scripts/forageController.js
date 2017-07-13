@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ui.bootstrap', 'ngRoute']);
 
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
@@ -127,7 +127,7 @@ function forageController(forageService, $location) {
     console.log(latlon);
     mapholder = document.getElementById('mapholder');
     mapholder.style.height = '90vh';
-    mapholder.style.width = '80vw';
+    mapholder.style.width = '85vw';
     // mapholder.style.height = '500px';
     // mapholder.style.width = '500px';
 
@@ -155,7 +155,7 @@ function forageController(forageService, $location) {
       streetViewControl: false
     }; //end myOptions
 
-    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Title"></textarea></div>';
+    vm.contentString = '<div class="mapTitle"><textarea rows="4" cols="40" id="markerTitle" ng-model ="fc.title" class="title"placeholder="Notes"></textarea></div>';
     // <input type="button" value="Upload" onclick="showPicker()">
     var infowindow = new google.maps.InfoWindow({
       content: vm.contentString
@@ -259,7 +259,7 @@ function forageController(forageService, $location) {
 
 } //end controller
 function openNav() {
-  document.getElementById("mySidenav").style.width = "175px";
+  document.getElementById("mySidenav").style.width = "250px";
 }
 
 function closeNav() {
