@@ -227,6 +227,7 @@ function forageController(forageService, $location) {
         console.log(itemToSend);
       });
     }); //end getCity
+    alert('You did it!');
   }; //end postItem
 
   vm.getItems = function() {

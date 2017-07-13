@@ -3,7 +3,7 @@
   <a href="#!/mapIt">Map It</a>
   <a href="#!/finds">Profile</a>
   <a href="#!/chat"><u>Chat</u></a>
-  <a href="#!/list">List</a>
+  <a href="#!/list">Gallery</a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
@@ -21,7 +21,7 @@
 <div class="messageBox">
   <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="cc.body" placeholder="Enter Message"></textarea>
   <div class="addBtn">
-    <button class='addComment' ng-click='cc.sendMessage()' type="button" name="button">Add Comment</button>
+    <button class='addComment' ng-click='cc.sendMessage(); fc.getItems()' type="button" name="button">Add Comment</button>
   </div>
 </div>
 <div ng-init='cc.getMessages()'>

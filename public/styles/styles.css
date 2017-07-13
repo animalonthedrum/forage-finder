@@ -314,6 +314,8 @@ li {
 
 .glyphicon-chevron-left {
   background-color: black;
+  display: none;
+  background-image: url('https://image.flaticon.com/icons/png/512/0/340.png');
 }
 
 .glyphicon-chevron-right {
@@ -325,4 +327,38 @@ li {
   margin: 10px;
 }
 
-.icon-prev
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(vendors/glyphicons-halflings-regular.ttf);
+}
+
+.fa-chevron-circle-right {
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  /*margin-top: -10px;*/
+}
+
+.fa-chevron-circle-left {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+.imageLoop {
+  margin: 20px;
+}
+
+.carousel-indicators {
+  display: none;
+  background-color: black;
+}
+
+.fa-times-circle-o {
+  position: absolute;
+  color: #984234;
+}
