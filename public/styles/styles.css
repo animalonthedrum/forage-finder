@@ -10,7 +10,8 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #363234;
+  /*background-color: #363234;*/
+  background-color: #425239;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -37,9 +38,17 @@ body {
   margin-left: 50px;
 }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
+u {
+  color: #757555;
+}
+
+.logoMark {
+  height: 80px;
+  width: 80px;
+  background-position: center;
+  margin-right: 47.5px;
+  margin-left: 40.5px;
+  margin-top: 120px;
 }
 
 @media screen and (max-height: 450px) {
@@ -197,10 +206,6 @@ li {
   color: white;
 }
 
-.nav {
-  float: right;
-}
-
 .addComment {
   float: right;
   margin-right: 300px;
@@ -247,25 +252,45 @@ li {
 }
 
 #main {
-  background-color: #757555;
-  color: #363234;
-  height: 80px;
+  background-color: #f4efe6;
+  /*border-style: solid;*/
+  border-bottom: solid #dedcd9;
+  border-width: thin;
+  color: #ccb48d;
+  transition: margin-left .5s;
+  padding: 16px;
 }
 
+.upperRight {
+  float: right;
+  color: #ccb48d;
+  font-size: 18px;
+}
+
+.upperRight2 {
+  float: right;
+  color: #ccb48d;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+
+/*#main {*/
+
+
+/*background-color: #757555;*/
+
+
+/*color: #363234;
+  height: 80px;
+}*/
+
 .logOut {
-  margin-top: 400px;
+  margin-top: 200px;
 }
 
 .closebtn {
   cursor: pointer;
-}
-
-a {
-  margin: 10px;
-}
-
-u {
-  color: #757555;
 }
 
 .uploadImg {

@@ -4,14 +4,18 @@
   <a href="#!/finds">Profile</a>
   <a href="#!/chat">Chat</a>
   <a href="#!/list"><u>List</u></a>
-  <div class='logOut'>
+  <img class='logoMark' src="images/Asset 2.png" alt="">
+  <!-- <div class='logOut'>
     <a href="#">Log Out</a>
-  </div>
+  </div> -->
 </div>
 
 <div id="main">
 
   <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <a class='upperRight' href="#">Log Out</a>
+  <a class='upperRight2' href="#">Log In</a>
+
 </div>
 
 <!-- <div class="list">
@@ -29,9 +33,10 @@
 <!-- class="col-md-4 listItems" -->
 <div class='col-md-4' ng-repeat='map in fc.maps'>
   <img ng-src="{{map.img}}" class='uploadImg'>
-  <p>Date: {{map.timeStamp | date}} </p>
-  <p>Notes: {{map.title}} </p>
-  <p>City: {{map.city}} </p>
+  <h3>Date: {{map.timeStamp | date}} </h3>
+  <h4>Notes: {{map.title}} </h4>
+  <h3>City: {{map.city}} </h3>
+  <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
   <button ng-click='mc.deleteMarker(map._id); fc.getItems()' type="button" name="button">Delete</button>
 
 </div>
