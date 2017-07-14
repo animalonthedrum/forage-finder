@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
   <a class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#!/mapIt"><i class="fa fa-map-marker" aria-hidden="true"></i> Map It</a>
-  <a href="#!/finds"><i class="fa fa-map" aria-hidden="true"></i> Profile</a>
-  <a href="#!/chat"><i class="fa fa-list-alt" aria-hidden="true"></i></i> List</a>
-  <a href="#!/list"><u><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</u></a>
+  <a href="#!/mapIt"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
+  <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Profile</a>
+  <a href="#!/chat"><i class="fa fa-list-alt icon" aria-hidden="true"></i></i>List</a>
+  <a href="#!/list"><u><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</u></a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
@@ -16,7 +16,7 @@
 
   <span class='menuIcon' style="font-size:72px;cursor:pointer" onclick="openNav()">&#9776; </span>
   <a class='upperRight' href="#">Log Out</a>
-  <a class='upperRight2' href="#">Log In</a>
+  <!-- <a class='upperRight2' href="#">Log In</a> -->
   <!-- <div class="listView">
     <a href="#!chat"><i class="fa fa-list-alt" aria-hidden="true"></i> List View</a>
   </div> -->
@@ -58,10 +58,11 @@
       <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" />
       <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
       <div class='info'>
-        <h4>Notes: {{map.title}} </h4>
+        <h4>{{map.title}} </h4>
         <h4>Date: {{map.timeStamp | date}} </h4>
         <h5>City: {{map.city}} </h5>
         <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+
       </div>
 
     </div>

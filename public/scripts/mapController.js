@@ -81,8 +81,10 @@ function mapController(forageService, $filter) {
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
-      infowindow.setContent('<h3>Notes: ' + place.title + '</h3>' + 'Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
-      // ' Share: ' + place.options +
+      infowindow.setContent('<h3 class="markerInfo">' + place.title + '</h3>' + '<h5 class="markerInfo">Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '</h5>' + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>');
+      // '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>'
+
+      //  ' Share: ' + place.options +
       infowindow.open(map, this);
     }));
   }

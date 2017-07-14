@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'News Cycle', sans-serif;
   transition: background-color .5s;
 }
 
@@ -24,6 +24,9 @@ body {
   color: #818181;
   display: block;
   transition: 0.3s;
+  text-align: center;
+  margin-top: auto;
+  ;
 }
 
 .sidenav a:hover, .offcanvas a:focus {
@@ -46,8 +49,8 @@ u {
   height: 80px;
   width: 80px;
   background-position: center;
-  margin-right: 47.5px;
-  margin-left: 40.5px;
+  margin-right: 85px;
+  margin-left: 85px;
   margin-top: 120px;
 }
 
@@ -109,7 +112,7 @@ h1 {
   height: 25px;
   width: 100px;
   border-radius: 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'News Cycle', sans-serif;
   margin-left: 100px;
   float: left;
 }
@@ -138,23 +141,36 @@ h1 {
   height: 100px;
   width: 100px;
   border-radius: 100px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'News Cycle', sans-serif;
   background-image: url('https://cdn3.iconfinder.com/data/icons/shopping-and-market/512/pin_marker_location_mark_navigation_flat_icon-512.png');
   background-size: cover;
   border: none;
+  background-color: transparent;
 }
 
 .add:hover {
   opacity: 0.3;
 }
 
+.upload {
+  border: none;
+  text-align: center;
+  background-color: #e6e4e2;
+  padding: 10px;
+  border-radius: 30px;
+}
+
 .addMapBtn {
   float: right;
   margin-right: 20px;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'News Cycle', sans-serif;
   font-size: 24px;
   font-weight: bold;
+  margin-top: 100px;
+}
+
+.mapItText {
   margin-top: 100px;
 }
 
@@ -197,10 +213,15 @@ h1 {
 
 .title {
   border: none;
+  font-family: 'News Cycle', sans-serif;
   font-size: 16px;
   height: 50px;
   padding: 10px;
   margin: 5px;
+}
+
+.markerInfo {
+  font-family: 'News Cycle', sans-serif;
 }
 
 li {
@@ -378,4 +399,12 @@ h5 {
 
 .carousel-control.right {
   background-image: none;
+}
+
+.edible {
+  background-color: red;
+}
+
+.icon {
+  float: left;
 }

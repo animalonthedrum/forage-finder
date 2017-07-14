@@ -19,7 +19,7 @@ var mapSchema = new mongoose.Schema({
   lon: Number,
   details: String,
   title: String,
-  options: Number,
+  options: String,
   timeStamp: Date,
   city: String,
   img: String

@@ -206,6 +206,7 @@ function forageController(forageService, $location) {
 
       console.log(response);
 
+
       var itemToSend = {
         // description: vm.info,
         placer: vm.loginName,
@@ -219,6 +220,11 @@ function forageController(forageService, $location) {
         city: response.data.results[0].address_components[3].long_name,
         img: vm.img
       };
+      if (itemToSend.options === 'Non-Edible') {
+        itemToSend.nonEdible = true;
+      } else {
+        itemToSend.nonEdible = false;
+      }
 
 
       console.log(vm.mode);
