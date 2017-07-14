@@ -227,7 +227,21 @@ function forageController(forageService, $location) {
         console.log(itemToSend);
       });
     }); //end getCity
-    alert('You did it!');
+    swal({
+
+      title: 'Marker Added to Your Map!',
+      text: 'Check your Profile to see all your markers',
+      timer: 2000,
+      background: '#fff url(https://blog.spoongraphics.co.uk/wp-content/uploads/2015/topographic-map/6.jpg)'
+    }).then(
+      function() {},
+      // handling the promise rejection
+      function(dismiss) {
+        if (dismiss === 'timer') {
+          console.log('I was closed by the timer');
+        }
+      }
+    ); //end sweetalert
   }; //end postItem
 
   vm.getItems = function() {

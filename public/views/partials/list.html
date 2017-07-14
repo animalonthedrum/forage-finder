@@ -2,7 +2,7 @@
   <a class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#!/mapIt"><i class="fa fa-map-marker" aria-hidden="true"></i> Map It</a>
   <a href="#!/finds"><i class="fa fa-map" aria-hidden="true"></i> Profile</a>
-  <a href="#!/chat"><i class="fa fa-commenting-o" aria-hidden="true"></i> Notes</a>
+  <a href="#!/chat"><i class="fa fa-list-alt" aria-hidden="true"></i></i> List</a>
   <a href="#!/list"><u><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</u></a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
@@ -12,10 +12,14 @@
 
 <div id="main">
 
-  <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+
+  <span class='menuIcon' style="font-size:72px;cursor:pointer" onclick="openNav()">&#9776; </span>
   <a class='upperRight' href="#">Log Out</a>
   <a class='upperRight2' href="#">Log In</a>
-
+  <!-- <div class="listView">
+    <a href="#!chat"><i class="fa fa-list-alt" aria-hidden="true"></i> List View</a>
+  </div> -->
 </div>
 
 <!-- <div class="list">
@@ -47,15 +51,15 @@
 
 
 
-<div ng-init='fc.getItems()' style="height: 305px">
+<div class='pageSize' ng-init='fc.getItems()' style="height: 100vh">
 
   <div uib-carousel active="true" interval="3000" no-wrap="false">
     <div class='imageLoop' uib-slide="" active="map.active" ng-repeat="map in fc.maps" index="$index">
-      <img ng-src="{{map.img}}" style="margin:auto; height:500px; width:500px;" />
+      <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" />
       <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
       <div class='info'>
-        <h4>Date: {{map.timeStamp | date}} </h4>
         <h4>Notes: {{map.title}} </h4>
+        <h4>Date: {{map.timeStamp | date}} </h4>
         <h5>City: {{map.city}} </h5>
         <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
       </div>

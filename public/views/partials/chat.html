@@ -1,9 +1,9 @@
 <div id="mySidenav" class="sidenav">
   <a class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#!/mapIt">Map It</a>
-  <a href="#!/finds">Profile</a>
-  <a href="#!/chat"><u>Chat</u></a>
-  <a href="#!/list">Gallery</a>
+  <a href="#!/mapIt"><i class="fa fa-map-marker" aria-hidden="true"></i> Map It</a>
+  <a href="#!/finds"><i class="fa fa-map" aria-hidden="true"></i> Profile</a>
+  <a href="#!/chat"><i class="fa fa-list-alt" aria-hidden="true"></i><u> List</u></a>
+  <a href="#!/list"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
@@ -12,13 +12,45 @@
 
 <div id="main">
 
-  <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <span class='menuIcon' style="font-size:72px;cursor:pointer" onclick="openNav()">&#9776; </span>
   <a class='upperRight' href="#">Log Out</a>
   <a class='upperRight2' href="#">Log In</a>
 </div>
 
+<!--
+<div class="list">
+  <div class="container">
+    <div class="col-md-4 listItems" ng-repeat='map in fc.maps'>
+      <img ng-src="{{map.img}}" class='uploadImg'>
+      <h3>Date: {{map.timeStamp | date}}</h3>
+      <h4>Description: {{map.title | filter:searchText}}</h4>
+      <h4>Sharing: {{map.options}}</h4>
+      <h4>City: {{map.city}}</h4>
+      <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
 
-<div class="messageBox">
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class='col-md-6' ng-repeat='map in fc.maps'>
+      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+      <img ng-src="{{map.img}}" class='uploadImg'>
+      <div class="textInfo">
+
+
+        <h5>Date: {{map.timeStamp | date}} </h5>
+        <h4>Notes: {{map.title}} </h4>
+        <h4>City: {{map.city}} </h4>
+        <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="messageBox">
   <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="cc.body" placeholder="Enter Message"></textarea>
   <div class="addBtn">
     <button class='addComment' ng-click='cc.sendMessage(); fc.getItems()' type="button" name="button">Add Comment</button>
@@ -29,9 +61,7 @@
   <h3 ng-repeat='message in cc.messages'>
     {{fc.loggedInUser | uppercase}} - {{ message.body }}
     <button ng-click='cc.deleteMessage(message._id)' class='deleteBtn' type="button" name="button">Delete</button>
-  <!-- <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button> -->
-  <!-- <button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
+  <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button>
+<button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
 </button>
 <p>{{mess.likes}} Likes</p> -->
-  </h3>
-</div>

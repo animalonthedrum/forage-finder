@@ -95,13 +95,15 @@ h1 {
   text-align: center;
 }
 
+
+/*
 .messageInput {
   height: 50px;
   width: 920px;
   font-size: 20px;
   margin: 30px;
   margin-left: 200px;
-}
+}*/
 
 .returnBtn {
   height: 25px;
@@ -137,7 +139,7 @@ h1 {
   width: 100px;
   border-radius: 100px;
   font-family: 'Lato', sans-serif;
-  background-image: url('https://lh3.googleusercontent.com/UeIB6zS0pu3IBAcQZrPXPoQ-2zyT-YL6CnvEHqgix90goqPe74LbqYwrrvD2yJXTVw=w300');
+  background-image: url('https://cdn3.iconfinder.com/data/icons/shopping-and-market/512/pin_marker_location_mark_navigation_flat_icon-512.png');
   background-size: cover;
   border: none;
 }
@@ -206,10 +208,11 @@ li {
   color: white;
 }
 
-.addComment {
+
+/*.addComment {
   float: right;
   margin-right: 300px;
-}
+}*/
 
 .addComment:hover {
   opacity: 0.5;
@@ -258,7 +261,6 @@ li {
   border-width: thin;
   color: #ccb48d;
   transition: margin-left .5s;
-  /*padding: 16px;*/
   height: 10vh;
   padding-left: 10px;
 }
@@ -278,17 +280,6 @@ li {
   padding-right: 10px;
 }
 
-
-/*#main {*/
-
-
-/*background-color: #757555;*/
-
-
-/*color: #363234;
-  height: 80px;
-}*/
-
 .logOut {
   margin-top: 200px;
 }
@@ -297,29 +288,37 @@ li {
   cursor: pointer;
 }
 
+.col-md-6 {
+  text-align: center;
+  padding-top: 10px;
+}
+
 .uploadImg {
   height: 275px;
   width: 275px;
-  text-align: center;
   margin: 10px;
   padding: 20px;
+  background-color: #f4efe6;
+}
+
+.textInfo {
+  max-width: 275px;
+  margin: auto;
+}
+
+h5 {
+  font-style: italic;
+  font-weight: 400;
+  color: #a29f9a;
 }
 
 .rightSide {
   width: 15vw;
   height: 90vh;
-  background-color: #425239;
+  background-color: #f4efe6;
   float: right;
-}
-
-.glyphicon-chevron-left {
-  background-color: black;
-  display: none;
-  background-image: url('https://image.flaticon.com/icons/png/512/0/340.png');
-}
-
-.glyphicon-chevron-right {
-  background-color: black;
+  border-left: solid #dedcd9;
+  border-width: thin;
 }
 
 .info {
@@ -333,20 +332,23 @@ li {
 }
 
 .fa-chevron-circle-right {
-  height: 30px;
   position: absolute;
-  top: 50%;
-  z-index: 5;
-  display: inline-block;
-  /*margin-top: -10px;*/
-}
-
-.fa-chevron-circle-left {
-  position: absolute;
+  /*margin-right: 50px;*/
   top: 50%;
   z-index: 5;
   display: inline-block;
   margin-top: -10px;
+  color: #ccb48d;
+}
+
+.fa-chevron-circle-left {
+  position: absolute;
+  /*margin-left: 50px;*/
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+  color: #ccb48d;
 }
 
 .imageLoop {
@@ -355,10 +357,25 @@ li {
 
 .carousel-indicators {
   display: none;
-  background-color: black;
 }
 
 .fa-times-circle-o {
   position: absolute;
   color: #984234;
+}
+
+.carousel-inner {
+  margin-top: 50px;
+}
+
+.menuIcon {
+  margin-top: 100px;
+}
+
+.carousel-control.left {
+  background-image: none;
+}
+
+.carousel-control.right {
+  background-image: none;
 }
