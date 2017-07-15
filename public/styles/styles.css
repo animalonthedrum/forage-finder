@@ -401,10 +401,15 @@ h5 {
   background-image: none;
 }
 
-.edible {
+
+/*.Non-Edible {
   background-color: red;
-}
+}*/
 
 .icon {
   float: left;
+}
+
+.links {
+  text-align: center;
 }

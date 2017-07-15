@@ -16,6 +16,9 @@ myApp.config(function($routeProvider) {
   }).when('/list', {
     templateUrl: 'views/partials/list.html',
     controller: 'mapController as mc'
+  }).when('/links', {
+    templateUrl: 'views/partials/links.html',
+
   });
 });
 
@@ -256,6 +259,7 @@ function forageController(forageService, $location) {
       console.log('in get:', res);
       vm.maps = res.data;
       console.log(vm.maps);
+      console.log(vm.img);
 
 
     });

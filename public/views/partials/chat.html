@@ -4,6 +4,7 @@
   <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Profile</a>
   <a href="#!/chat"><u><i class="fa fa-list-alt icon" aria-hidden="true"></i>List</u></a>
   <a href="#!/list"><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</a>
+  <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Links</a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
@@ -12,7 +13,7 @@
 
 <div id="main">
 
-  <span class='menuIcon' style="font-size:72px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <span class='menuIcon' style="font-size:52px;cursor:pointer" onclick="openNav()">&#9776; </span>
   <a class='upperRight' href="#">Log Out</a>
   <!-- <a class='upperRight2' href="#">Log In</a> -->
 </div>
@@ -34,10 +35,13 @@
 
 <div class="container">
   <div class="row">
-    <div class='col-md-6' ng-repeat='map in fc.maps' ng-class='{edible: map.nonEdible}'>
+    <div class='col-md-6' ng-repeat='map in fc.maps' ng-class='fc.mode'>
       <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-      <img ng-src="{{map.img}}" class='uploadImg'>
+      <img ng-src="{{map.img}}" class='uploadImg' src='images/Asset 2.png'>
       <div class="textInfo">
+
+        <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button>
+
 
 
         <h5>Date: {{map.timeStamp | date}} </h5>

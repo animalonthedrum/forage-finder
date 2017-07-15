@@ -4,6 +4,7 @@
   <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Profile</a>
   <a href="#!/chat"><i class="fa fa-list-alt icon" aria-hidden="true"></i></i>List</a>
   <a href="#!/list"><u><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</u></a>
+  <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Links</a>
   <img class='logoMark' src="images/Asset 2.png" alt="">
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
@@ -14,7 +15,7 @@
 
 
 
-  <span class='menuIcon' style="font-size:72px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <span class='menuIcon' style="font-size:52px;cursor:pointer" onclick="openNav()">&#9776; </span>
   <a class='upperRight' href="#">Log Out</a>
   <!-- <a class='upperRight2' href="#">Log In</a> -->
   <!-- <div class="listView">
@@ -55,13 +56,15 @@
 
   <div uib-carousel active="true" interval="3000" no-wrap="false">
     <div class='imageLoop' uib-slide="" active="map.active" ng-repeat="map in fc.maps" index="$index">
-      <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" />
+      <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" src='https://nfcontent-cdn.s3.amazonaws.com/kitsune/themes/luxury/images/default.png' />
       <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
       <div class='info'>
+        <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button>
         <h4>{{map.title}} </h4>
         <h4>Date: {{map.timeStamp | date}} </h4>
         <h5>City: {{map.city}} </h5>
         <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+
 
       </div>
 
