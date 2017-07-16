@@ -284,17 +284,17 @@ function forageController(forageService, $location) {
 
 } //end controller
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "66vw";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-
-
-
-// var showPicker = function() {
-//   console.log('in showpicker out of controller');
-//   var wtf = angular.element(document.getElementById('#mapholder')).scope().get();
-//   console.log(wtf);
-// };
+// fullwidth
+// function openNav() {
+//   document.getElementById("mySidenav").style.width = "100%";
+// }
+//
+// function closeNav() {
+//   document.getElementById("mySidenav").style.width = "0";
+// }

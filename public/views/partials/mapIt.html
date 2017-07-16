@@ -1,52 +1,61 @@
 <!-- loading spinner -->
 <div ng-if='fc.spinnerToggle' class="spinner"></div>
-<div class="mapHeader">
 
-  <div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav">
+  <div class="menuItems">
     <a class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#!/mapIt"><u><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</u></a>
-    <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Profile</a>
-    <a href="#!/chat"><i class="fa fa-list-alt icon" aria-hidden="true"></i></i>List</a>
+    <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
+    <a href="#!/chat"><i class="fa fa-list-alt icon" aria-hidden="true"></i></i>Archive</a>
     <a href="#!/list"><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</a>
-    <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Links</a>
+    <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
     <img class='logoMark' src="images/Asset 2.png" alt="">
     <!-- <div class='logOut'>
       <a href="#">Log Out</a>
     </div> -->
   </div>
+</div>
 
-  <div id="main">
-
-    <span class='menuIcon' style="font-size:52px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-    <a class='upperRight' href="#">Log Out</a>
-    <a class='upperRight2' href="#">Log In</a>
-  </div>
-
-
-  <div id="mapholder" ng-init="fc.getLocation()">
-
-  </div>
+<div id="main">
+  <span class='menuIcon' style="font-size:68px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <a class='upperRight' href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+  <a class='upperRight2' href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Log In</a>
+</div>
 
 
+<div id="mapholder" ng-init="fc.getLocation()">
 
-  <!-- <input ng-model='fc.info' type="text" class='notes' placeholder="Notes"> -->
+</div>
 
 
-  <div class="rightSide">
-    <div class="addMapBtn">
-      <h4 class='instruction'>Click the marker to add notes</h4>
-      <button ng-click='fc.postItem()' type="button" class='add'><p class='mapItText'>MAP IT</p></button>
-      <!-- <p>MAP IT</p> -->
-      <div class="mapInfo">
-        <select ng-model='fc.mode' class="type" placeholder='mode' name="">
-      <option value="" disabled selected>Category</option>
-    <option selected value="Edible">Edible</option>
-  <option value="Non-Edible">Non-Edible</option>
-  </select>
 
-        <!-- <img ng-src="{{map.img}}" class='uploadImg'> -->
-      </div>
-      <button class="upload" ng-click="fc.showPicker()">Add Image</button>
+<!-- <input ng-model='fc.info' type="text" class='notes' placeholder="Notes"> -->
+
+
+<div class="rightSide">
+  <div class="addMapBtn">
+    <h4 class='instruction'>Click the marker to add notes</h4>
+    <div class="uploadDiv">
+      <button class="upload" ng-click="fc.showPicker()"><i class="fa fa-picture-o" aria-hidden="true"></i> <u>Upload</u></button>
     </div>
+
+    <!-- <div class="mapInfo"> -->
+    <!-- select drop down to add more options -->
+    <select ng-model='fc.mode' class="type">
+      <option value="" disabled selected>Category</option>
+    <option selected value="Fungi">Fungi</option>
+      <option selected value="Berry">Berry</option>
+        <option selected value="Nut">Nut</option>
+          <option selected value="Plant">Plant</option>
+            <option selected value="Medicinal">Medicinal</option>
+  <option value="Inedible">Inedible</option>
+    <option selected value="Poisonous">Poisonous</option>
+  </select>
+    <div>
+      <button ng-click='fc.postItem()' type="button" class='add'><p class='mapItText'>MAP IT</p></button>
+    </div>
+    <!-- <img ng-src="{{map.img}}" class='uploadImg'> -->
+    <!-- </div> -->
+
   </div>
+</div>

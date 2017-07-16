@@ -1,7 +1,17 @@
 body {
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Zilla Slab', serif;
   transition: background-color .5s;
 }
+
+
+/*map*/
+
+#mapholder {
+  position: absolute;
+}
+
+
+/*sidenav menu*/
 
 .sidenav {
   height: 100%;
@@ -20,12 +30,14 @@ body {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 60px;
   color: #818181;
   display: block;
   transition: 0.3s;
-  text-align: center;
-  margin-top: auto;
+  /*text-align: center;*/
+  margin-left: 15%;
+  margin-top: 20px;
+  ;
   ;
 }
 
@@ -37,7 +49,7 @@ body {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 60px;
   margin-left: 50px;
 }
 
@@ -45,15 +57,32 @@ u {
   color: #757555;
 }
 
+.menuItems {
+  margin-top: 10vh;
+}
+
 .logoMark {
   height: 80px;
   width: 80px;
   background-position: center;
-  margin-right: 85px;
-  margin-left: 85px;
+  /*margin-right: 50%;*/
+  /*margin-left: 50%;*/
   margin-top: 120px;
 }
 
+.icon {
+  float: left;
+  padding: 8px 8px 8px 32px;
+  font-size: 60px;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+  margin-top: auto;
+  margin-right: 2vw;
+}
+
+
+/*
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -61,15 +90,71 @@ u {
   .sidenav a {
     font-size: 18px;
   }
+}*/
+
+
+/*top nav*/
+
+#main {
+  background-color: #f4efe6;
+  /*border-style: solid;*/
+  border-bottom: solid #dedcd9;
+  border-width: thin;
+  color: #ccb48d;
+  transition: margin-left .5s;
+  height: 10vh;
+  padding-left: 10px;
+  width: 100vw;
+}
+
+.upperRight {
+  float: right;
+  color: #ccb48d;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.upperRight2 {
+  float: right;
+  color: #ccb48d;
+  font-size: 18px;
+  margin-top: 30px;
+  padding-right: 10px;
+}
+
+.logOut {
+  margin-top: 200px;
+}
+
+.closebtn {
+  cursor: pointer;
 }
 
 
-/*before adding menu icon nav bar*/
+/*headers*/
 
 h1 {
   text-align: center;
   margin: 50px;
+  font-family: 'Zilla Slab', serif;
 }
+
+h5 {
+  font-style: italic;
+  font-weight: 400;
+  color: #a29f9a;
+}
+
+h3 {
+  font-family: 'Zilla Slab', serif;
+}
+
+h2 {
+  font-family: 'Zilla Slab', serif;
+}
+
+
+/*login page*/
 
 .loginHeader {
   font-size: 72px;
@@ -108,40 +193,47 @@ h1 {
   margin-left: 200px;
 }*/
 
-.returnBtn {
-  height: 25px;
-  width: 100px;
-  border-radius: 5px;
-  font-family: 'News Cycle', sans-serif;
-  margin-left: 100px;
-  float: left;
+
+/*mapIt page*/
+
+
+/*right side mapit*/
+
+.rightSide {
+  width: 15vw;
+  height: 90vh;
+  background-color: #f4efe6;
+  float: right;
+  border-left: solid #dedcd9;
+  border-width: thin;
 }
 
-.findbtn {
-  height: 80px;
-  width: 300px;
-  font-family: 'Lato', sans-serif;
-  font-size: 20px;
-  text-align: center;
-  margin-top: 10px;
-  padding: 20px 20px;
-}
-
-.mapBtnImg {
-  float: left;
+.info {
+  padding: 10px;
   margin: 10px;
-  height: 40px;
 }
 
-#mapholder {
-  position: absolute;
+.uploadDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.type {
+  margin-bottom: 20px;
+}
+
+
+/*add map marker button*/
+
+.instruction {
+  margin-top: 30px;
 }
 
 .add {
   height: 100px;
   width: 100px;
   border-radius: 100px;
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Zilla Slab', serif;
   background-image: url('https://cdn3.iconfinder.com/data/icons/shopping-and-market/512/pin_marker_location_mark_navigation_flat_icon-512.png');
   background-size: cover;
   border: none;
@@ -152,26 +244,37 @@ h1 {
   opacity: 0.3;
 }
 
+
+/*map it text under button*/
+
+.mapItText {
+  margin-top: 100px;
+}
+
+
+/*add image button*/
+
 .upload {
-  border: none;
   text-align: center;
-  background-color: #e6e4e2;
   padding: 10px;
   border-radius: 30px;
+  border: none;
+  background-color: transparent;
+  color: #757555;
 }
+
+
+/*right side button div*/
 
 .addMapBtn {
   float: right;
   margin-right: 20px;
   text-align: center;
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Zilla Slab', serif;
   font-size: 24px;
   font-weight: bold;
   margin-top: 100px;
-}
-
-.mapItText {
-  margin-top: 100px;
+  color: #757555;
 }
 
 
@@ -198,6 +301,9 @@ h1 {
         }
       }*/
 
+
+/*loading gif*/
+
 .spinner {
   height: 300px;
   width: 300px;
@@ -211,9 +317,12 @@ h1 {
   margin: auto;
 }
 
+
+/*marker window*/
+
 .title {
   border: none;
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Zilla Slab', serif;
   font-size: 16px;
   height: 50px;
   padding: 10px;
@@ -221,12 +330,18 @@ h1 {
 }
 
 .markerInfo {
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Zilla Slab', serif;
+  text-align: center;
 }
 
-li {
-  font-size: 22px;
-  color: white;
+.markerBox {
+  max-width: 300px;
+  text-align: center;
+}
+
+.markerImg {
+  height: 150px;
+  width: 150px;
 }
 
 
@@ -252,15 +367,6 @@ li {
   float: right;
 }
 
-.listItems {
-  height: 275px;
-  width: 275px;
-  background-color: #A88151;
-  text-align: center;
-  margin: 10px;
-  padding: 20px;
-}
-
 .deleteBtn {
   height: 20px;
   width: 80px;
@@ -271,109 +377,60 @@ li {
   opacity: 0.5;
 }
 
-.instruction {
-  margin-top: 30px;
-}
 
-#main {
-  background-color: #f4efe6;
-  /*border-style: solid;*/
-  border-bottom: solid #dedcd9;
-  border-width: thin;
-  color: #ccb48d;
-  transition: margin-left .5s;
-  height: 10vh;
-  padding-left: 10px;
-}
-
-.upperRight {
-  float: right;
-  color: #ccb48d;
-  font-size: 18px;
-  padding-right: 10px;
-}
-
-.upperRight2 {
-  float: right;
-  color: #ccb48d;
-  font-size: 18px;
-  margin-top: 30px;
-  padding-right: 10px;
-}
-
-.logOut {
-  margin-top: 200px;
-}
-
-.closebtn {
-  cursor: pointer;
-}
-
-.col-md-6 {
-  text-align: center;
-  padding-top: 10px;
-}
+/*images on list page */
 
 .uploadImg {
-  height: 275px;
-  width: 275px;
-  margin: 10px;
-  padding: 20px;
+  /*height: 275px;
+  width: 275px;*/
+  margin-top: 15vh;
+  width: 70vw;
+  height: 60vh;
+  /*margin: 10px;
+  padding: 20px;*/
   background-color: #f4efe6;
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
+
+@media {}
 
 .textInfo {
-  max-width: 275px;
+  max-width: 70vw;
   margin: auto;
+  text-align: center;
+  font-family: 'Zilla Slab', serif;
 }
 
-h5 {
-  font-style: italic;
-  font-weight: 400;
-  color: #a29f9a;
+.archive {
+  font-size: 32px;
 }
 
-.rightSide {
-  width: 15vw;
-  height: 90vh;
-  background-color: #f4efe6;
-  float: right;
-  border-left: solid #dedcd9;
-  border-width: thin;
+.archive2 {
+  font-size: 42px;
 }
 
-.info {
-  padding: 10px;
-  margin: 10px;
-}
 
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url(vendors/glyphicons-halflings-regular.ttf);
-}
+/*carousel*/
 
 .fa-chevron-circle-right {
   position: absolute;
-  /*margin-right: 50px;*/
   top: 50%;
   z-index: 5;
   display: inline-block;
   margin-top: -10px;
   color: #ccb48d;
+  margin-right: auto;
 }
 
 .fa-chevron-circle-left {
   position: absolute;
-  /*margin-left: 50px;*/
   top: 50%;
   z-index: 5;
   display: inline-block;
   margin-top: -10px;
   color: #ccb48d;
-}
-
-.imageLoop {
-  margin: 20px;
+  margin-left: auto;
 }
 
 .carousel-indicators {
@@ -386,11 +443,7 @@ h5 {
 }
 
 .carousel-inner {
-  margin-top: 50px;
-}
-
-.menuIcon {
-  margin-top: 100px;
+  width: 100vw
 }
 
 .carousel-control.left {
@@ -401,15 +454,41 @@ h5 {
   background-image: none;
 }
 
-
-/*.Non-Edible {
-  background-color: red;
-}*/
-
-.icon {
-  float: left;
+.imageLoop {
+  margin-top: 10vh;
 }
+
+
+/*resource page*/
 
 .links {
   text-align: center;
+}
+
+.resource {
+  font-size: 52px;
+}
+
+.tech {
+  font-size: 52px;
+  text-align: center;
+}
+
+li {
+  font-size: 36px;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.thanks {
+  text-align: center;
+  margin-top: 5vh;
 }
