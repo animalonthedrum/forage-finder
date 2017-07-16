@@ -7,20 +7,22 @@
 
     <a href="#!/mapIt"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
     <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
-    <a href="#!/chat"><u><i class="fa fa-list-alt icon" aria-hidden="true"></i>Archive</u></a>
+    <a href="#!/chat"><u><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</u></a>
     <a href="#!/list"><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</a>
     <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
   </div>
-  <img class='logoMark' src="images/Asset 2.png" alt="">
+  <i><img class='logoMark' src="/images/ff_sidenav_v1.png" alt=""></i>
 
   <!-- <div class='logOut'>
     <a href="#">Log Out</a>
   </div> -->
 </div>
 
-<div id="main">
-
-  <span class='menuIcon' style="font-size:68px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<div id="main" img src="images/ff_header_v1.png">
+  <!-- <img src="images/ff_header_v1.png"> -->
+  <!-- &#9776;  -->
+  <!-- style="font-size:68px;cursor:pointer" -->
+  <span class='menuIcon' onclick="openNav()"><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
   <a class='upperRight' href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
   <!-- <a class='upperRight2' href="#">Log In</a> -->
 
@@ -74,3 +76,42 @@
 <button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
 </button>
 <p>{{mess.likes}} Likes</p> -->
+
+
+
+<!--
+login page -->
+
+<!-- <div id="main2">
+  <span class='menuIcon'><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
+</div>
+
+<div class="">
+
+
+  <div class="appname">
+
+    <div id="loginPage" ng-hide="fc.loginToggle" ng-show="fc.loginToggle">
+      <i class="fa fa-envelope fa-2x" aria-hidden="true"></i><input class="loginUser" type="text" ng-model="fc.username" placeholder="email address">
+    </div>
+    <div id="loginPage" ng-show="fc.loginToggle">
+      <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i><input class="loginUser" ng-show="fc.loginToggle" type="text" name="" placeholder="username">
+    </div>
+    <div id="loginPage" ng-show="fc.loginToggle">
+      <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i><input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
+    </div>
+    <div id="loginPage" ng-hide="fc.loginToggle">
+
+      <i class="fa fa-lock fa-2x" aria-hidden="true"></i><input class="loginPass" type="password" ng-model="fc.password" placeholder="confirm password">
+    </div>
+    <div id="loginPage" ng-hide="fc.loginToggle">
+      <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i><button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
+      <button class="btn" ng-hide="fc.loginToggle" type="submit" name="button" ng-click="fc.register()">Register</button>
+
+    </div>
+    <div id="loginPage">
+      <a href="/#!" ng-show="fc.loginToggle" ng-click="fc.toggleLogin()">Register</a>
+      <a href="/#!" ng-hide="fc.loginToggle" ng-click="fc.toggleLogin()">Login</a>
+
+
+    </div> -->

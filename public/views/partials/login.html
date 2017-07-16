@@ -1,23 +1,61 @@
-<div class="appname">
-  <h1 class="loginHeader">FOUND-forage</h1>
-</div>
-<div id="loginPage">
-  <input class="loginUser" type="text" ng-model="fc.username" placeholder="username">
-</div>
-<div id="loginPage">
-  <input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
-</div>
-<div id="loginPage">
-  <button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
-  <button class="btn" ng-hide="fc.loginToggle" type="submit" name="button" ng-click="fc.register()">Register</button>
-</div>
-<div id="loginPage">
-  <a href="/#!" ng-show="fc.loginToggle" ng-click="fc.toggleLogin()">Register</a>
-  <a href="/#!" ng-hide="fc.loginToggle" ng-click="fc.toggleLogin()">Login</a>
-
-</div>
-<div class="footer">
+<div id="mySidenav" class="sidenav">
+  <a class="closebtn" onclick="closeNav()">&times;</a>
 
 
-  <footer>Forage Finder Copy will go here</footer>
+  <div class="menuItems">
+
+
+    <a><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
+    <a><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
+    <a><u><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</u></a>
+    <a><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</a>
+    <a><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
+  </div>
+
+
+  <!-- <div class='logOut'>
+    <a href="#">Log Out</a>
+  </div> -->
 </div>
+
+<div id="main2">
+  <span class='menuIcon'><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
+</div>
+
+<div class="">
+
+
+  <div class="appname">
+
+    <div id="loginPage">
+      <input class="loginUser" type="text" ng-model="fc.username" placeholder="username">
+    </div>
+    <div id="loginPage">
+      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing">
+    </div>
+    <div id="loginPage">
+      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing2">
+    </div>
+    <div id="loginPage">
+      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing3">
+    </div>
+    <div id="loginPage">
+      <input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
+    </div>
+    <div id="loginPage">
+      <button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
+      <button class="btn" ng-hide="fc.loginToggle" type="submit" name="button" ng-click="fc.register()">Register</button>
+    </div>
+    <div id="loginPage">
+      <a href="/#!" ng-show="fc.loginToggle" ng-click="fc.toggleLogin()">Register</a>
+      <a href="/#!" ng-hide="fc.loginToggle" ng-click="fc.toggleLogin()">Login</a>
+
+
+    </div>
+    <div class="footer">
+
+
+      <footer>Forage Finder Copy will go here</footer>
+    </div>
+
+  </div>

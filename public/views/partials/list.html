@@ -3,7 +3,7 @@
     <a class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#!/mapIt"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
     <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
-    <a href="#!/chat"><i class="fa fa-list-alt icon" aria-hidden="true"></i></i>Archive</a>
+    <a href="#!/chat"><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</a>
     <a href="#!/list"><u><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</u></a>
     <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
     <img class='logoMark' src="images/Asset 2.png" alt="">
@@ -14,7 +14,7 @@
 </div>
 
 <div id="main">
-  <span class='menuIcon' style="font-size:68px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <span class='menuIcon' onclick="openNav()"><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
   <a class='upperRight' href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
   <!-- <a class='upperRight2' href="#">Log In</a> -->
 </div>
@@ -56,11 +56,11 @@
       <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
       <div class='info'>
         <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button>
-        <h5>{{map.timeStamp | date}} </h5>
-        <h4>{{map.title}} </h4>
-        <h5>{{map.city}} </h5>
-        <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
-        <h4>Category: {{map.options}}</h4>
+        <h5 class='gallFont'>{{map.timeStamp | date}} </h5>
+        <h4 class='gallFont1'>{{map.title}} </h4>
+        <h5 class='gallFont'>{{map.city}} </h5>
+        <h5 class='gallFont'>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+        <h4 class='gallFont1'>Category: {{map.options}}</h4>
       </div>
     </div>
   </div>
