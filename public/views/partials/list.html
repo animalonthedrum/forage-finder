@@ -19,43 +19,16 @@
   <!-- <a class='upperRight2' href="#">Log In</a> -->
 </div>
 
-<!-- <div class="list">
-  <div class="container">
-    <div class="col-md-4 listItems" ng-repeat='map in fc.maps'>
-      <h3>Date: {{map.timeStamp | date}}</h3>
-      <h4>Description: {{map.title | filter:searchText}}</h4>
-      <h4>Sharing: {{map.options}}</h4>
-      <h4>City: {{map.city}}</h4>
-      <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
-      <img ng-src="{{map.img}}" class='uploadImg'>
-    </div>
-  </div>
-</div> -->
-<!-- class="col-md-4 listItems" -->
-
-<!-- Before Carousel -->
-<!-- <div class='col-md-4' ng-repeat='map in fc.maps'>
-  <img ng-src="{{map.img}}" class='uploadImg'>
-  <h4>Date: {{map.timeStamp | date}} </h4>
-  <h4>Notes: {{map.title}} </h4>
-  <h4>City: {{map.city}} </h4>
-  <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
-  <button ng-click='mc.deleteMarker(map._id); fc.getItems()' type="button" name="button">Delete</button>
-
-</div> -->
-
-
-
-
-
 <div class='pageSize' ng-init='fc.getItems()' style="height: 100vh">
 
   <div uib-carousel active="true" interval="3000" no-wrap="false">
     <div class='imageLoop' uib-slide="" active="map.active" ng-repeat="map in fc.maps" index="$index">
       <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" src='https://nfcontent-cdn.s3.amazonaws.com/kitsune/themes/luxury/images/default.png' class="carouselImages" />
-      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-2x " aria-hidden="true"></i>
       <div class='info'>
-        <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button>
+        <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i>
+
+        <!-- <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button> -->
         <h5 class='gallFont'>{{map.timeStamp | date}} </h5>
         <h4 class='gallFont1'>{{map.title}} </h4>
         <h5 class='gallFont'>{{map.city}} </h5>

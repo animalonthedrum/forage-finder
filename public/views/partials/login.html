@@ -26,21 +26,22 @@
 
 
   <div class="appname">
+    <div id="loginPage">
+      <i class="fa fa-envelope fa-2x logIcon" aria-hidden="true" ng-hide="fc.loginToggle"></i><input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="email address">
+    </div>
+    <div id="loginPage">
+      <i class="fa fa-user-plus fa-2x logIcon" aria-hidden="true"></i><input class="loginUser" type="text" ng-model="fc.username" placeholder="username">
+    </div>
+
+    <!-- <div id="loginPage">
+      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Name">
+    </div> -->
 
     <div id="loginPage">
-      <input class="loginUser" type="text" ng-model="fc.username" placeholder="username">
+      <i class="fa fa-unlock-alt fa-2x logIcon" aria-hidden="true"></i><input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
     </div>
     <div id="loginPage">
-      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing">
-    </div>
-    <div id="loginPage">
-      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing2">
-    </div>
-    <div id="loginPage">
-      <input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="Testing3">
-    </div>
-    <div id="loginPage">
-      <input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
+      <i class="fa fa-lock fa-2x logIcon" aria-hidden="true" ng-hide="fc.loginToggle"></i><input class="loginUser" ng-hide="fc.loginToggle" type="text" name="" placeholder="confirm password">
     </div>
     <div id="loginPage">
       <button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
@@ -54,8 +55,10 @@
     </div>
     <div class="footer">
 
-
-      <footer>Forage Finder Copy will go here</footer>
+      <hr>
+      <footer>Found Forage is NOT a identification tool.</footer>
+      <footer>DO NOT consume wild edibles unless ABSOLUTELY certain of positive identification! </footer>
+      <footer>Enjoy nature and all that is has to offer.</footer>
     </div>
 
   </div>

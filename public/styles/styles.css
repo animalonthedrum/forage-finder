@@ -2,6 +2,42 @@
     font-family: 'Zilla Slab', serif;
     transition: background-color .5s;
   }
+  /*login page*/
+
+  .loginHeader {
+    font-size: 72px;
+    margin: 100px;
+    padding: 50px;
+    text-align: center;
+    color: #757555;
+  }
+
+  .loginUser {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .loginPass {
+    /*height: 25px;*/
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #loginPage {
+    text-align: center;
+    margin: 20px 20px 0;
+  }
+
+  .footer {
+    margin: 100px;
+    text-align: center;
+  }
+
+  .logIcon {
+    margin-right: 20px;
+    display: inline-block;
+    color: #ccb48d;
+  }
   /*map*/
 
   #mapholder {
@@ -121,15 +157,16 @@
     color: #ccb48d;
     font-size: 18px;
     padding-right: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
   }
-
-  .upperRight2 {
+  /*.upperRight2 {
     float: right;
     color: #ccb48d;
     font-size: 18px;
     margin-top: 30px;
     padding-right: 10px;
-  }
+  }*/
 
   .logOut {
     margin-top: 200px;
@@ -158,37 +195,6 @@
 
   h2 {
     font-family: 'Zilla Slab', serif;
-  }
-  /*login page*/
-
-  .loginHeader {
-    font-size: 72px;
-    margin: 100px;
-    padding: 50px;
-    text-align: center;
-    color: #757555;
-  }
-
-  .loginUser {
-    font-size: 20px;
-    text-align: center;
-    ;
-  }
-
-  .loginPass {
-    /*height: 25px;*/
-    font-size: 20px;
-    text-align: center;
-  }
-
-  #loginPage {
-    text-align: center;
-    margin: 20px 20px 0;
-  }
-
-  .footer {
-    margin: 100px;
-    text-align: center;
   }
   /*
 .messageInput {
@@ -251,8 +257,8 @@
   /*add image button*/
 
   .upload {
-    height: 100px;
-    width: 400px;
+    /*height: 400px;
+    width: 800px;*/
     max-width: 15vw;
     text-align: center;
     padding: 10px;
@@ -260,6 +266,7 @@
     border: none;
     background-color: transparent;
     color: #757555;
+    cursor: pointer;
   }
   /*right side button div*/
 
@@ -382,11 +389,10 @@
   .uploadImg {
     /*height: 275px;
   width: 275px;*/
-    margin-top: 15vh;
+    margin-top: 12vh;
     width: 70vw;
     height: 60vh;
-    /*margin: 10px;
-  padding: 20px;*/
+    padding: 20px;
     background-color: #f4efe6;
     margin-left: 15vw;
     margin-right: 15vw;
@@ -434,7 +440,7 @@
     display: none;
   }
 
-  .fa-times-circle-o {
+  .fa-trash {
     position: absolute;
     color: #984234;
   }
@@ -451,6 +457,13 @@
   .carousel-control.right {
     background-image: none;
     margin-top: 30vh;
+  }
+
+  .deleteList {
+    margin-left: 12vw;
+    margin-top: 12vh;
+    position: absolute;
+    color: #984234;
   }
 
   .imageLoop {

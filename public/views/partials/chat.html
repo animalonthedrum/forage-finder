@@ -45,15 +45,18 @@
   <div ng-init='fc.getItems()'>
 
     <div ng-repeat='map in fc.maps' ng-class='fc.mode'>
+      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-3x deleteList" aria-hidden="true"></i>
 
       <img ng-src="{{map.img}}" class='uploadImg' src='images/Asset 2.png'>
+
       <div class="textInfo">
-        <!-- <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i> -->
-        <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button>
+        <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i>
+        <!-- <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button> -->
         <h5 class='archive'>{{map.timeStamp | date}} </h5>
         <h4 class='archive2'>{{map.title}}</h4>
-        <h4 class='archive2'>{{map.city}}</h4>
+        <h5 class='archive'>{{map.city}}</h5>
         <h5 class='archive'>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
+        <h4 class='archive'>Category: {{map.options}}</h4>
         <!-- <h5>Category: {{map.options}}</h5> -->
       </div>
     </div>
@@ -76,42 +79,3 @@
 <button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
 </button>
 <p>{{mess.likes}} Likes</p> -->
-
-
-
-<!--
-login page -->
-
-<!-- <div id="main2">
-  <span class='menuIcon'><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
-</div>
-
-<div class="">
-
-
-  <div class="appname">
-
-    <div id="loginPage" ng-hide="fc.loginToggle" ng-show="fc.loginToggle">
-      <i class="fa fa-envelope fa-2x" aria-hidden="true"></i><input class="loginUser" type="text" ng-model="fc.username" placeholder="email address">
-    </div>
-    <div id="loginPage" ng-show="fc.loginToggle">
-      <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i><input class="loginUser" ng-show="fc.loginToggle" type="text" name="" placeholder="username">
-    </div>
-    <div id="loginPage" ng-show="fc.loginToggle">
-      <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i><input class="loginPass" type="password" ng-model="fc.password" placeholder="password">
-    </div>
-    <div id="loginPage" ng-hide="fc.loginToggle">
-
-      <i class="fa fa-lock fa-2x" aria-hidden="true"></i><input class="loginPass" type="password" ng-model="fc.password" placeholder="confirm password">
-    </div>
-    <div id="loginPage" ng-hide="fc.loginToggle">
-      <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i><button class="btn" ng-show="fc.loginToggle" type="submit" name="button" ng-click='fc.logIn()'>Login</button>
-      <button class="btn" ng-hide="fc.loginToggle" type="submit" name="button" ng-click="fc.register()">Register</button>
-
-    </div>
-    <div id="loginPage">
-      <a href="/#!" ng-show="fc.loginToggle" ng-click="fc.toggleLogin()">Register</a>
-      <a href="/#!" ng-hide="fc.loginToggle" ng-click="fc.toggleLogin()">Login</a>
-
-
-    </div> -->
