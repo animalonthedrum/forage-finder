@@ -7,9 +7,8 @@ myApp.config(function($routeProvider) {
     //   templateUrl: 'views/partials/home.html'
   }).when('/mapIt', {
     templateUrl: 'views/partials/mapIt.html'
-  }).when('/chat', {
-    templateUrl: 'views/partials/chat.html',
-    controller: 'chatController as cc'
+  }).when('/archive', {
+    templateUrl: 'views/partials/chat.html'
   }).when('/finds', {
     templateUrl: 'views/partials/finds.html',
     controller: 'mapController as mc'
@@ -61,6 +60,7 @@ function forageController(forageService, $location) {
           title: "Great Find!",
           text: "Log In to Start Mapping Your Forage Finds!",
           imageUrl: "https://vignette3.wikia.nocookie.net/hhwa/images/2/21/Forage.png/revision/latest?cb=20150324094419"
+
         });
         // clear out inputs
         // vm.loginName = vm.username;
@@ -238,19 +238,12 @@ function forageController(forageService, $location) {
     }); //end getCity
     swal({
 
-      title: 'Marker Added to Your Map!',
-      text: 'Check your Profile to see all your markers',
+      title: "Great Find!",
+      text: 'Marker Added to Your Finds!',
       timer: 2000,
-      background: '#fff url(https://blog.spoongraphics.co.uk/wp-content/uploads/2015/topographic-map/6.jpg)'
-    }).then(
-      function() {},
-      // handling the promise rejection
-      function(dismiss) {
-        if (dismiss === 'timer') {
-          console.log('I was closed by the timer');
-        }
-      }
-    ); //end sweetalert
+      imageUrl: 'images/ff_sidenav_final.png'
+    });
+
   }; //end postItem
 
   vm.getItems = function() {
@@ -259,7 +252,7 @@ function forageController(forageService, $location) {
       console.log('in get:', res);
       vm.maps = res.data;
       console.log(vm.maps);
-      console.log(vm.img);
+      // console.log(vm.img);
 
 
     });

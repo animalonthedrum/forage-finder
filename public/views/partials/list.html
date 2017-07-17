@@ -3,14 +3,15 @@
     <a class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#!/mapIt"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
     <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
-    <a href="#!/chat"><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</a>
+    <a href="#!/archive"><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</a>
     <a href="#!/list"><u><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</u></a>
     <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
-    <img class='logoMark' src="images/Asset 2.png" alt="">
+
     <!-- <div class='logOut'>
     <a href="#">Log Out</a>
   </div> -->
   </div>
+  <i><img class='logoMark' src="images/ff_sidenav_final.png" alt=""></i>
 </div>
 
 <div id="main">
@@ -23,10 +24,12 @@
 
   <div uib-carousel active="true" interval="3000" no-wrap="false">
     <div class='imageLoop' uib-slide="" active="map.active" ng-repeat="map in fc.maps" index="$index">
-      <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" src='https://nfcontent-cdn.s3.amazonaws.com/kitsune/themes/luxury/images/default.png' class="carouselImages" />
-      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-2x " aria-hidden="true"></i>
+      <img ng-src="{{map.img}}" style="margin:auto; height:675px; width:675px;" src='images/ff_default_675x675.png' class="carouselImages" />
+      <button ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-2x " aria-hidden="true"></button>
       <div class='info'>
-        <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i>
+        <button class="upload" ng-click="fc.showPicker()" ng-show="map.img === undefined"><i class="fa fa-picture-o" aria-hidden="true" ng-show="map.img === undefined"></i> <u>Upload</u></button>
+
+        <!-- <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i> -->
 
         <!-- <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button> -->
         <h5 class='gallFont'>{{map.timeStamp | date}} </h5>

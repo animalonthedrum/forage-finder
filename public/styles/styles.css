@@ -15,17 +15,47 @@
   .loginUser {
     font-size: 20px;
     text-align: center;
+    margin-top: 20px;
+  }
+
+  .loginUser1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .loginUser2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .loginPass {
     /*height: 25px;*/
     font-size: 20px;
     text-align: center;
+    margin-top: 20px;
   }
 
   #loginPage {
+    background-color: #dde4da;
     text-align: center;
-    margin: 20px 20px 0;
+    /*margin: 20px 20px 0;*/
+  }
+
+  .loginLogo {
+    margin-left: 16vw;
+  }
+
+  .btnLogin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 20px;
+    border-width: thin;
+    border-color: #ccb48d;
+    background-color: transparent;
   }
 
   .footer {
@@ -99,9 +129,10 @@
   }
 
   .logoMark {
-    background-position: center;
-    background-image: url('../images/ff_sidenav_v1.png');
-    margin: 100px 0 0 25%;
+    /*margin-top: 100px;
+    margin-right: 5vw;*/
+    margin-left: 2.5vw;
+    margin-top: 100px;
   }
 
   .icon {
@@ -138,8 +169,7 @@
     background-image: url('../images/ff_header_v1.png');
     background-size: contain;
   }
-
-  #main2 {
+  /*#main2 {
     background-color: #f4efe6;
     border-style: solid;
     border-bottom: solid #dedcd9;
@@ -149,7 +179,11 @@
     height: 10vh;
     padding-left: 10px;
     width: 100vw;
-    margin-bottom: 30vh;
+  }*/
+
+  #main2 {
+    background-color: #dde4da;
+    height: 15vh;
   }
 
   .upperRight {
@@ -211,6 +245,7 @@
     width: 15vw;
     height: 90vh;
     background-color: #f4efe6;
+    background-color: #dde4da;
     float: right;
     border-left: solid #dedcd9;
     border-width: thin;
@@ -233,37 +268,35 @@
 
   .instruction {
     margin-top: 30px;
+    max-width: 10vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    text-align: center;
   }
 
   .add {
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-    font-family: 'Zilla Slab', serif;
-    background-image: url('https://cdn3.iconfinder.com/data/icons/shopping-and-market/512/pin_marker_location_mark_navigation_flat_icon-512.png');
-    background-size: cover;
-    border: none;
+    border-radius: 20px;
     background-color: transparent;
+    border-width: thin;
+    border-color: #425239;
+    padding: 20px;
   }
 
   .add:hover {
     opacity: 0.3;
   }
   /*map it text under button*/
-
-  .mapItText {
-    margin-top: 100px;
-  }
   /*add image button*/
 
   .upload {
     /*height: 400px;
     width: 800px;*/
+    border-radius: 20px;
+    border-width: thin;
+    border-color: #425239;
+    padding: 20px;
     max-width: 15vw;
     text-align: center;
-    padding: 10px;
-    border-radius: 30px;
-    border: none;
     background-color: transparent;
     color: #757555;
     cursor: pointer;
@@ -272,6 +305,8 @@
 
   .addMapBtn {
     float: right;
+    margin-right: 1vw;
+    margin-left: 1vw;
     text-align: center;
     font-family: 'Zilla Slab', serif;
     font-size: 24px;
@@ -280,28 +315,6 @@
     color: #757555;
     max-width: 15vw;
   }
-  /*.spinner {
-        height: 150px;
-        width: 150px;
-        position: absolute;
-        background-image: url('https://maxcdn.icons8.com/office/PNG/512/Food/mushroom-512.png');
-        background-size: cover;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        animation: spin 1s infinite;
-      }
-
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }*/
   /*loading gif*/
 
   .spinner {
@@ -390,12 +403,12 @@
     /*height: 275px;
   width: 275px;*/
     margin-top: 12vh;
-    width: 70vw;
-    height: 60vh;
+    width: 75%;
+    height: 75%;
     padding: 20px;
     background-color: #f4efe6;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
   }
 
   @media {}
@@ -443,6 +456,10 @@
   .fa-trash {
     position: absolute;
     color: #984234;
+    border-width: thin;
+    border-radius: 20px;
+    border-color: #984234;
+    background-color: transparent;
   }
 
   .carousel-inner {
@@ -464,6 +481,10 @@
     margin-top: 12vh;
     position: absolute;
     color: #984234;
+    background-color: transparent;
+    border-color: #984234;
+    border-radius: 20px;
+    border-width: thin;
   }
 
   .imageLoop {
@@ -513,3 +534,12 @@
   /*.prime {
   background-color: #f4efe6;
 }*/
+
+  .swal {
+    font-family: 'Zilla Slab', serif;
+  }
+
+  .appName {
+    background-color: #dde4da;
+    height: 100vh;
+  }

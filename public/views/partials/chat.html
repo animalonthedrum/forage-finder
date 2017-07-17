@@ -7,75 +7,36 @@
 
     <a href="#!/mapIt"><i class="fa fa-map-marker icon" aria-hidden="true"></i>Map It</a>
     <a href="#!/finds"><i class="fa fa-map icon" aria-hidden="true"></i>Finds</a>
-    <a href="#!/chat"><u><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</u></a>
+    <a href="#!/archive"><u><i class="fa fa-leaf icon" aria-hidden="true"></i>Archive</u></a>
     <a href="#!/list"><i class="fa fa-picture-o icon" aria-hidden="true"></i>Gallery</a>
     <a href="#!/links"><i class="fa fa-external-link icon" aria-hidden="true"></i>Resources</a>
   </div>
-  <i><img class='logoMark' src="/images/ff_sidenav_v1.png" alt=""></i>
-
-  <!-- <div class='logOut'>
-    <a href="#">Log Out</a>
-  </div> -->
+  <i><img class='logoMark' src="images/ff_sidenav_final.png" alt=""></i>
 </div>
 
 <div id="main" img src="images/ff_header_v1.png">
-  <!-- <img src="images/ff_header_v1.png"> -->
-  <!-- &#9776;  -->
-  <!-- style="font-size:68px;cursor:pointer" -->
   <span class='menuIcon' onclick="openNav()"><i class="fa fa-bars fa-5x" aria-hidden="true"></i></span>
   <a class='upperRight' href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
-  <!-- <a class='upperRight2' href="#">Log In</a> -->
 
-
-  <!--
-<div class="list">
-  <div class="container">
-    <div class="col-md-4 listItems" ng-repeat='map in fc.maps'>
-      <img ng-src="{{map.img}}" class='uploadImg'>
-      <h3>Date: {{map.timeStamp | date}}</h3>
-      <h4>Description: {{map.title | filter:searchText}}</h4>
-      <h4>Sharing: {{map.options}}</h4>
-      <h4>City: {{map.city}}</h4>
-      <h5>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
-
-    </div>
-  </div>
-</div> -->
-  <!-- class='container' -->
   <div ng-init='fc.getItems()'>
 
     <div ng-repeat='map in fc.maps' ng-class='fc.mode'>
-      <i ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-3x deleteList" aria-hidden="true"></i>
+      <button ng-click='mc.deleteMarker(map._id); fc.getItems()' class="fa fa-trash fa-3x deleteList" aria-hidden="true"></button>
 
-      <img ng-src="{{map.img}}" class='uploadImg' src='images/Asset 2.png'>
+      <img ng-src="{{map.img}}" class='uploadImg' src='images/ff_default_675x675.png'>
 
       <div class="textInfo">
-        <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i>
+        <button class="upload" ng-click="fc.showPicker()" ng-show="map.img === undefined"><i class="fa fa-picture-o" aria-hidden="true" ng-show="map.img === undefined"></i> <u>Upload</u></button>
+        <!-- <i class="fa fa-picture-o fa-3x upload" aria-hidden="true" ng-show="map.img === undefined" ng-click="fc.showPicker()">Add</i> -->
         <!-- <button ng-show="map.img === undefined" class="upload" ng-click="fc.showPicker()">Add Image</button> -->
         <h5 class='archive'>{{map.timeStamp | date}} </h5>
         <h4 class='archive2'>{{map.title}}</h4>
         <h5 class='archive'>{{map.city}}</h5>
         <h5 class='archive'>Lat: {{map.lat | number}}  Long: {{map.lon | number}}</h5>
         <h4 class='archive'>Category: {{map.options}}</h4>
-        <!-- <h5>Category: {{map.options}}</h5> -->
       </div>
     </div>
 
   </div>
 
 </div>
-<!-- <div class="messageBox">
-  <textarea rows="4" cols="20" class="messageInput" type="text" ng-model="cc.body" placeholder="Enter Message"></textarea>
-  <div class="addBtn">
-    <button class='addComment' ng-click='cc.sendMessage(); fc.getItems()' type="button" name="button">Add Comment</button>
-  </div>
-</div>
-<div ng-init='cc.getMessages()'>
-
-  <h3 ng-repeat='message in cc.messages'>
-    {{fc.loggedInUser | uppercase}} - {{ message.body }}
-    <button ng-click='cc.deleteMessage(message._id)' class='deleteBtn' type="button" name="button">Delete</button>
-  <input ng-model='cc.reply' type="text" placeholder="Reply"><button type="button" name="button">Reply</button>
-<button class="likeButton" type="button" ng-click='cc.like(entry)'> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/70801-200.png" class="thumb">
-</button>
-<p>{{mess.likes}} Likes</p> -->

@@ -81,7 +81,7 @@ function mapController(forageService, $filter) {
 
     google.maps.event.addListener(marker, 'click', (function() {
       console.log(place._id);
-      infowindow.setContent('<div class="markerBox">' + '<h3 class="markerInfo">' + place.title + '</h3>' + '<img src=' + place.img + ' class="markerImg">' + '<h5 class="markerInfo">Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '</h5>' + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>' + '</div>');
+      infowindow.setContent('<div class="markerBox">' + '<h3 class="markerInfo">' + place.title + '</h3>' + '<img src=' + place.img + ' class="markerImg" alt="NO IMAGE. VISIT YOUR ARCHIVE TO ADD AN IMAGE">' + '<h5 class="markerInfo">Date (Y/M/D): ' + place.timeStamp.slice(0, 10) + '</h5>' + '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>' + '</div>');
       // '<button class="deleteMarkBtn" onclick="deletePlace(\'' + place._id + '\')" type="button">Delete</button>'
 
       //  ' Share: ' + place.options +

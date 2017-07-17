@@ -13,7 +13,7 @@ app.use('/', index);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/mapIt', map);
-app.use('/chat', chat);
+// app.use('/chat', chat);
 
 
 
