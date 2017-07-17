@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('localhost:27017/forageFinder');
+// mongoose.connect('localhost:27017/forageFinder');
 
 var userSchema = new mongoose.Schema({
   username: String,

@@ -48,40 +48,40 @@ myApp.service('forageService', function($http, $location) {
   };
   //get messages
 
-  sv.retrieveMessages = function() {
-    console.log('in service, retrieveMessages');
-    return $http({
-      method: 'GET',
-      url: '/chat'
-    }).then(function(response) {
-      console.log('in service back from server with:', response);
-      sv.data = response.data;
-    }); // end http
-  }; //end retrieveMessages
-
-  //post message
-
-  sv.newMessage = function(messageObject) {
-    console.log('in service sending:', messageObject);
-    return $http({
-      method: 'POST',
-      url: '/chat',
-      data: messageObject
-    }).then(function(response) {
-      console.log('back from post with:', response);
-    }); // end http
-  }; // end newMessage
-
-  //delete Message
-  sv.deleteMessage = function(messageId) {
-    console.log('in deleteMessage, messageId is', messageId);
-    return $http({
-      method: 'DELETE',
-      url: '/chat/' + messageId
-    }).then(function(response) {
-      sv.deletedMessage = response;
-    });
-  }; // end deleteMessage
+  // sv.retrieveMessages = function() {
+  //   console.log('in service, retrieveMessages');
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/chat'
+  //   }).then(function(response) {
+  //     console.log('in service back from server with:', response);
+  //     sv.data = response.data;
+  //   }); // end http
+  // }; //end retrieveMessages
+  //
+  // //post message
+  //
+  // sv.newMessage = function(messageObject) {
+  //   console.log('in service sending:', messageObject);
+  //   return $http({
+  //     method: 'POST',
+  //     url: '/chat',
+  //     data: messageObject
+  //   }).then(function(response) {
+  //     console.log('back from post with:', response);
+  //   }); // end http
+  // }; // end newMessage
+  //
+  // //delete Message
+  // sv.deleteMessage = function(messageId) {
+  //   console.log('in deleteMessage, messageId is', messageId);
+  //   return $http({
+  //     method: 'DELETE',
+  //     url: '/chat/' + messageId
+  //   }).then(function(response) {
+  //     sv.deletedMessage = response;
+  //   });
+  // }; // end deleteMessage
 
 
   //delete Marker
