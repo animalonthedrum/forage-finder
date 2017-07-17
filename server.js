@@ -5,7 +5,7 @@ var index = require('./modules/routes/index');
 var register = require('./modules/routes/register');
 var login = require('./modules/routes/login');
 var map = require('./modules/routes/mapIt');
-var chat = require('./modules/routes/chat');
+// var chat = require('./modules/routes/chat');
 
 // uses
 app.use(express.static('public'));
