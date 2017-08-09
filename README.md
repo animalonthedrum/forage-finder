@@ -12,7 +12,7 @@ Intended for all foragers as a mapping tool. Not a forager? Use Found Forage to 
 
 
 
-##Full Stack application using the MEAN STACK, Google Maps API and the Filestack API.
+Full Stack application using the MEAN STACK, Google Maps API and the Filestack API.
 
 \*FOUND FORAGE is not an identification tool.
 
