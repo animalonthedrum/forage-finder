@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var user = require('../user');
+// var user = require('../user');
 var bcrypt = require('bcrypt');
 var mongoose = require('mongoose');
 
@@ -10,8 +10,8 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
-mongoose.connect('mongodb://heroku_bsck088f:s6lo3oobfgqnic05lf17vgacvc@ds157268.mlab.com:57268/heroku_bsck088f');
-
+mongoose.connect('localhost:27017/forageFinder');
+// 'mongodb://heroku_bsck088f:s6lo3oobfgqnic05lf17vgacvc@ds157268.mlab.com:57268/heroku_bsck088f'
 var mapSchema = new mongoose.Schema({
 
   username: String,
