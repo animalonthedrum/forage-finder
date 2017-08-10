@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['ui.bootstrap', 'ngRoute']);
 
 myApp.config(function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl: 'views/partials/login.html'
+    templateUrl: 'views/partials/mapIt.html'
     // }).when('/home', {
     //   templateUrl: 'views/partials/home.html'
   }).when('/mapIt', {
