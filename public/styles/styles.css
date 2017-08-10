@@ -124,14 +124,16 @@
 
   .fa-bars {
     margin-top: 3vh;
-    margin-left: 2vw;
+    /*margin-right: 2vw;*/
     cursor: pointer;
+    float: left;
+    display: inline-block;
   }
 
   .logoMark {
     /*margin-top: 100px;
     margin-right: 5vw;*/
-    margin-left: 2.5vw;
+    margin-left: 3vw;
     margin-top: 100px;
   }
 
@@ -160,6 +162,7 @@
     /*background-color: #f4efe6;*/
     /*border-style: solid;*/
     border-bottom: solid #dedcd9;
+    background-color: #F4EFE6;
     border-width: thin;
     color: #ccb48d;
     transition: margin-left .5s;
@@ -168,6 +171,7 @@
     width: 100vw;
     background-image: url('../images/ff_header_v1.png');
     background-size: contain;
+    background-repeat: no-repeat;
   }
   /*#main2 {
     background-color: #f4efe6;
