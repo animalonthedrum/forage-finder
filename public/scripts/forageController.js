@@ -139,7 +139,7 @@ function forageController(forageService, $location) {
     var myOptions = {
       center: latlon,
       // zoom: 20,
-      zoom: 18,
+      zoom: 21,
       mapTypeControl: true,
       mapTypeControlOptions: {
         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
